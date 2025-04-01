@@ -1,0 +1,16 @@
+{
+  "Ambato": {
+    "Quito": 111,
+    "Riobamba": 54
+  },
+  "Latacunga": {
+    "Quito": 89
+  },
+  "Quito": {
+    "Ambato": 111,
+    "Latacunga": 89
+  },
+  "Riobamba": {
+    "Ambato": 54
+  }
+}
