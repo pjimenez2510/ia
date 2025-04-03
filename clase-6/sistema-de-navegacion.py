@@ -61,3 +61,31 @@ ruta_optima, distancia_total = a_star(mapa_ciudad, 'Almacén', 'Destino')
 print(f"Ruta óptima: {ruta_optima}")
 print(f"Distancia total: {distancia_total}")
 
+# Crear el grafo para visualización
+G = nx.Graph()
+
+# Añadir nodos y aristas
+for nodo, vecinos in mapa_ciudad.items():
+    for vecino, peso in vecinos.items():
+        G.add_edge(nodo, vecino, weight=peso)
+
+# Posicionamiento usando las coordenadas definidas
+pos = coordenadas
+
+# Dibujar el grafo completo
+plt.figure(figsize=(12, 8))
+nx.draw(G, pos, with_labels=True, node_size=700,
+       node_color='lightblue', font_size=10,
+       font_weight='bold')
+nx.draw_networkx_edge_labels(G, pos,
+                           edge_labels=nx.get_edge_attributes(G, 'weight'))
+
+# Resaltar la ruta óptima
+aristas_ruta = [(ruta_optima[i], ruta_optima[i+1]) for i in range(len(ruta_optima)-1)]
+nx.draw_networkx_edges(G, pos, edgelist=aristas_ruta,
+                     edge_color='red', width=2)
+nx.draw_networkx_nodes(G, pos, nodelist=ruta_optima,
+                     node_color='red', node_size=700)
+
+plt.title(f"Ruta Óptima: {' → '.join(ruta_optima)}\nDistancia total: {distancia_total} km")
+plt.show()
