@@ -1,6 +1,6 @@
 from copy import deepcopy
 import heapq
-
+import matplotlib.pyplot as plt
 estado_inicial = [
     [1, 2, 3],
     [4, 0, 5],
@@ -12,6 +12,15 @@ estado_objetivo = [
     [4, 5, 6],
     [7, 8, 0]
 ]
+
+def dibujar_puzzle(estado):
+    """Visualiza el estado actual del puzzle"""
+    fig, ax = plt.subplots()
+    ax.matshow([[1 if valor != 0 else 0 for valor in fila] for fila in estado])
+    for i in range(3):
+        for j in range(3):
+            ax.text(j, i, str(estado[i][j]), ha='center', va='center', fontsize=20)
+    plt.show()
 
 def heuristica_manhattan(estado):
     '''Calcula la distancia de Manhattan entre el estado actual y el estado objetivo'''
@@ -99,6 +108,6 @@ if solucion:
     for i, accion in enumerate(solucion, 1):
         print(f"Paso {i}: Mover {accion}")
     print("\nEstado final alcanzado:")
-    #dibujar_puzzle(estado_objetivo)
+    dibujar_puzzle(estado_objetivo)
 else:
     print("No se encontró solución para este estado inicial.")
