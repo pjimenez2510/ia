@@ -56,3 +56,8 @@ def a_star(mapa, inicio, destino):
                                nuevo_costo))
     
     return None
+
+ruta_optima, distancia_total = a_star(mapa_ciudad, 'Almacén', 'Destino')
+print(f"Ruta óptima: {ruta_optima}")
+print(f"Distancia total: {distancia_total}")
+
