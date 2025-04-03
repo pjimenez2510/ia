@@ -86,3 +86,19 @@ def a_star(estado_inicial, estado_objetivo):
                                camino + [accion]))
     
     return None             
+
+
+
+
+
+# Resolución del puzzle
+solucion = a_star(estado_inicial, estado_objetivo)
+
+if solucion:
+    print("Solución encontrada. Pasos:")
+    for i, accion in enumerate(solucion, 1):
+        print(f"Paso {i}: Mover {accion}")
+    print("\nEstado final alcanzado:")
+    #dibujar_puzzle(estado_objetivo)
+else:
+    print("No se encontró solución para este estado inicial.")
