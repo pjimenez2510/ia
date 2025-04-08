@@ -103,3 +103,25 @@ plt.xlabel("Iteración")
 plt.ylabel("Distancia (km)")
 plt.grid(True)
 plt.show()
+
+
+plt.figure(figsize=(8, 8))
+
+for punto, (x, y) in ubicaciones.items():
+    plt.scatter(x, y, s=200, label=punto)
+    plt.text(x, y + 0.2, punto, fontsize=12, ha='center')
+    
+# Dibuja la ruta óptima
+ruta_optima = ['Almacén'] + ruta_optima + ['Almacén']
+
+for i in range(len(ruta_optima)-1):
+    x1, y1 = ubicaciones[ruta_optima[i]]
+    x2, y2 = ubicaciones[ruta_optima[i+1]]
+    plt.plot([x1, x2], [y1, y2], 'r-', linewidth=2)
+
+plt.title("Ruta Óptima")
+plt.xlabel("Coordenada X")
+plt.ylabel("Coordenada Y")
+plt.grid(True)
+plt.legend()
+plt.show()
