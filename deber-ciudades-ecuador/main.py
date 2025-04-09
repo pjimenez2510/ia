@@ -1,5 +1,4 @@
-# Módulos de la biblioteca estándar
- # Biblioteca para crear la interfaz gráfica de usuario (GUI)
+# Biblioteca para crear la interfaz gráfica de usuario (GUI)
 import tkinter as tk 
 # Funcionalidades para interactuar con el sistema operativo y manejo de archivos
 import os 

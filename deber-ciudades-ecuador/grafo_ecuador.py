@@ -26,17 +26,18 @@ import networkx as nx
 # Se utiliza para personalizar la visualización del grafo
 from matplotlib.colors import to_rgba
 
-"""
-    Clase que representa el grafo de ciudades del Ecuador y sus conexiones.
-    
-    Esta clase permite:
-    - Almacenar ciudades con sus coordenadas geográficas
-    - Representar las conexiones entre ciudades y sus distancias
-    - Implementar algoritmos de búsqueda de rutas
-    - Visualizar el grafo y las rutas encontradas
-"""
 class GrafoEcuador:
-    """
+"""
+Clase que representa el grafo de ciudades del Ecuador y sus conexiones.
+
+Esta clase permite:
+- Almacenar ciudades con sus coordenadas geográficas
+- Representar las conexiones entre ciudades y sus distancias
+- Implementar algoritmos de búsqueda de rutas
+- Visualizar el grafo y las rutas encontradas
+"""
+    def __init__(self, grafo_json=None):
+        """
         Constructor de la clase GrafoEcuador.
         
         Args:
@@ -45,8 +46,7 @@ class GrafoEcuador:
         
         Inicializa el grafo con las coordenadas por defecto de las ciudades del Ecuador
         y carga el grafo desde el archivo JSON si se proporciona.
-    """
-    def __init__(self, grafo_json=None):
+        """
         # Coordenadas por defecto de ciudades del Ecuador (latitud, longitud)
         self.coordenadas = {
             "Ambato": (-1.2391, -78.6273),
@@ -120,7 +120,8 @@ class GrafoEcuador:
         # Lista de ciudades en el grafo
         self.ciudades = list(self.grafo.keys())
     
-    """
+    def cargar_grafo_completo(self):
+        """
         Carga el grafo completo por defecto con las principales ciudades del Ecuador y sus conexiones.
         
         Returns:
@@ -129,8 +130,7 @@ class GrafoEcuador:
             
         El grafo incluye las principales ciudades del Ecuador y sus conexiones por carretera,
         con las distancias aproximadas entre ellas.
-    """
-    def cargar_grafo_completo(self):
+        """
         # Mantiene el grafo por defecto
         return {
             "Ambato": {"Azogues": 280, "Babahoyo": 212, "Cuenca": 321, "Esmeraldas": 371, "Guaranda": 92, 
@@ -183,7 +183,8 @@ class GrafoEcuador:
             "Macara": {"Loja": 195}
         }
     
-    """
+    def guardar_grafo(self, ruta_archivo):
+        """
         Guarda el grafo actual en un archivo JSON.
         
         Args:
@@ -191,8 +192,7 @@ class GrafoEcuador:
             
         El archivo JSON contendrá tanto el grafo como las coordenadas de las ciudades,
         permitiendo su posterior carga y reconstrucción.
-    """
-    def guardar_grafo(self, ruta_archivo):
+        """
         datos = {
             "grafo": self.grafo,
             "coords": {ciudad: {"lat": lat, "lng": lng} for ciudad, (lat, lng) in self.coordenadas.items()}
@@ -202,7 +202,8 @@ class GrafoEcuador:
             json.dump(datos, f, ensure_ascii=False, indent=2)
         print(f"Grafo guardado en {ruta_archivo}")
     
-    """
+    def agregar_conexion(self, origen, destino, distancia):
+        """
         Agrega una nueva conexión entre dos ciudades en el grafo.
         
         Args:
@@ -212,8 +213,7 @@ class GrafoEcuador:
             
         La conexión se agrega en ambas direcciones (origen->destino y destino->origen)
         para mantener la simetría del grafo.
-    """
-    def agregar_conexion(self, origen, destino, distancia):
+        """
         if origen not in self.grafo:
             self.grafo[origen] = {}
             self.ciudades.append(origen)
@@ -227,7 +227,8 @@ class GrafoEcuador:
         
         print(f"Conexión agregada: {origen} - {destino} = {distancia} km")
     
-    """
+    def agregar_ciudad(self, nombre, latitud, longitud):
+        """
         Agrega una nueva ciudad al grafo con sus coordenadas geográficas.
         
         Args:
@@ -236,8 +237,7 @@ class GrafoEcuador:
             longitud (float): Longitud de la ciudad en grados decimales.
             
         Si la ciudad ya existe, se actualizan sus coordenadas.
-    """
-    def agregar_ciudad(self, nombre, latitud, longitud):
+        """
         if nombre not in self.coordenadas:
             self.coordenadas[nombre] = (latitud, longitud)
             
@@ -248,7 +248,8 @@ class GrafoEcuador:
         else:
             print(f"Ciudad {nombre} actualizada con coordenadas ({latitud}, {longitud})")
     
-    """
+    def eliminar_conexion(self, origen, destino):
+        """
         Elimina una conexión entre dos ciudades del grafo.
         
         Args:
@@ -256,8 +257,7 @@ class GrafoEcuador:
             destino (str): Nombre de la ciudad de destino.
             
         La conexión se elimina en ambas direcciones para mantener la consistencia del grafo.
-    """
-    def eliminar_conexion(self, origen, destino):
+        """
         if origen in self.grafo and destino in self.grafo[origen]:
             del self.grafo[origen][destino]
             print(f"Conexión eliminada: {origen} - {destino}")
@@ -265,7 +265,8 @@ class GrafoEcuador:
         if destino in self.grafo and origen in self.grafo[destino]:
             del self.grafo[destino][origen]
     
-    """
+    def eliminar_ciudad(self, nombre):
+        """
         Elimina una ciudad del grafo y todas sus conexiones.
         
         Args:
@@ -276,8 +277,7 @@ class GrafoEcuador:
             
         El método elimina la ciudad del grafo, sus coordenadas y todas las conexiones
         que otras ciudades tenían con ella.
-    """
-    def eliminar_ciudad(self, nombre):
+        """
         if nombre in self.grafo:
             # Eliminar todas las conexiones a esta ciudad
             for ciudad in self.grafo:
@@ -293,7 +293,8 @@ class GrafoEcuador:
             return True
         return False
     
-    """
+    def obtener_distancia(self, origen, destino):
+        """
         Obtiene la distancia en kilómetros entre dos ciudades conectadas directamente.
         
         Args:
@@ -303,13 +304,13 @@ class GrafoEcuador:
         Returns:
             float or None: La distancia en kilómetros si existe una conexión directa,
             None si no hay conexión directa entre las ciudades.
-    """
-    def obtener_distancia(self, origen, destino):
+        """
         if origen in self.grafo and destino in self.grafo[origen]:
             return self.grafo[origen][destino]
         return None
     
-    """
+    def obtener_distancia_linea_recta(self, origen, destino):
+        """
         Calcula la distancia en línea recta entre dos ciudades usando la fórmula de Haversine.
         
         Args:
@@ -322,9 +323,7 @@ class GrafoEcuador:
             
         La fórmula de Haversine calcula la distancia entre dos puntos en una esfera
         usando sus coordenadas geográficas (latitud y longitud).
-    """
-    def obtener_distancia_linea_recta(self, origen, destino):
-        """Calcula la distancia en línea recta entre dos ciudades usando la fórmula de Haversine."""
+        """
         if origen not in self.coordenadas or destino not in self.coordenadas:
             return None
         
@@ -343,16 +342,17 @@ class GrafoEcuador:
         
         return c * r
     
-    """
+    def listar_ciudades(self):
+        """
         Obtiene una lista ordenada de todas las ciudades en el grafo.
         
         Returns:
             list: Lista de strings con los nombres de las ciudades ordenados alfabéticamente.
-    """
-    def listar_ciudades(self):
+        """
         return sorted(self.ciudades)
     
-    """
+    def listar_ciudades_con_coordenadas(self):
+        """
         Obtiene un diccionario con todas las ciudades y sus coordenadas geográficas.
         
         Returns:
@@ -360,12 +360,11 @@ class GrafoEcuador:
             son tuplas (latitud, longitud) con las coordenadas de cada ciudad.
             
         Si una ciudad no tiene coordenadas, se devuelve (None, None) como sus coordenadas.
-    """
-    def listar_ciudades_con_coordenadas(self):
-        """Devuelve un diccionario con las ciudades y sus coordenadas."""
+        """
         return {ciudad: self.coordenadas.get(ciudad, (None, None)) for ciudad in self.ciudades}
     
-    """
+    def listar_conexiones(self, ciudad):
+        """
         Obtiene todas las conexiones directas de una ciudad específica.
         
         Args:
@@ -374,13 +373,13 @@ class GrafoEcuador:
         Returns:
             dict: Diccionario donde las claves son las ciudades conectadas y los valores
             son las distancias en kilómetros. Si la ciudad no existe, retorna un diccionario vacío.
-    """
-    def listar_conexiones(self, ciudad):
+        """
         if ciudad in self.grafo:
             return self.grafo[ciudad]
         return {}
     
-    """
+    def busqueda_amplitud(self, origen, destino):
+        """
         Implementa el algoritmo de búsqueda en amplitud (BFS) para encontrar una ruta entre dos ciudades.
         
         Args:
@@ -402,8 +401,7 @@ class GrafoEcuador:
         - Complejidad espacial: O(V)
         - Garantiza encontrar el camino con menos ciudades intermedias
         - No es óptimo en términos de distancia total
-    """
-    def busqueda_amplitud(self, origen, destino):
+        """
         if origen not in self.grafo or destino not in self.grafo:
             return None, 0
         
@@ -427,7 +425,8 @@ class GrafoEcuador:
         
         return None, 0
     
-    """
+    def busqueda_profundidad(self, origen, destino):
+        """
         Implementa el algoritmo de búsqueda en profundidad (DFS) para encontrar una ruta entre dos ciudades.
         
         Args:
@@ -449,8 +448,7 @@ class GrafoEcuador:
         - No garantiza encontrar el camino más corto
         - Puede encontrar una ruta más rápidamente que BFS en algunos casos
         - Útil para explorar todos los caminos posibles
-    """
-    def busqueda_profundidad(self, origen, destino):
+        """
         if origen not in self.grafo or destino not in self.grafo:
             return None, 0
     
@@ -479,7 +477,8 @@ class GrafoEcuador:
         else:
             return None, 0
     
-    """
+    def busqueda_costo_uniforme(self, origen, destino):
+        """
         Implementa el algoritmo de búsqueda de costo uniforme (Dijkstra) para encontrar
         la ruta más corta entre dos ciudades.
         
@@ -502,8 +501,7 @@ class GrafoEcuador:
         - Garantiza encontrar el camino más corto en términos de distancia total
         - No puede manejar aristas con pesos negativos
         - Es óptimo para grafos con pesos positivos
-    """
-    def busqueda_costo_uniforme(self, origen, destino):
+        """
         if origen not in self.grafo or destino not in self.grafo:
             return None, 0
         
@@ -531,7 +529,8 @@ class GrafoEcuador:
         
         return None, 0
     
-    """
+    def busqueda_a_estrella(self, origen, destino):
+        """
         Implementa el algoritmo de búsqueda A* para encontrar la ruta más corta entre dos ciudades.
         
         Args:
@@ -557,8 +556,7 @@ class GrafoEcuador:
         La heurística utilizada es la distancia en línea recta entre ciudades, que es admisible
         ya que nunca sobreestima la distancia real (la distancia real siempre es mayor o igual
         a la distancia en línea recta).
-    """
-    def busqueda_a_estrella(self, origen, destino):
+        """
         if origen not in self.grafo or destino not in self.grafo:
             return None, 0
         
@@ -605,7 +603,8 @@ class GrafoEcuador:
         
         return None, 0
     
-    """
+    def visualizar_grafo(self, ruta=None, usar_mapa_real=False, ax=None):
+        """
         Visualiza el grafo de ciudades y sus conexiones.
         
         Args:
@@ -620,17 +619,16 @@ class GrafoEcuador:
             
         El método permite visualizar el grafo de dos formas:
         1. Usando un layout automático (usar_mapa_real=False):
-           - Las ciudades se distribuyen automáticamente para minimizar cruces
-           - Se muestran las distancias en las aristas
-           
+            - Las ciudades se distribuyen automáticamente para minimizar cruces
+            - Se muestran las distancias en las aristas
+            
         2. Usando coordenadas reales (usar_mapa_real=True):
-           - Las ciudades se posicionan según sus coordenadas geográficas
-           - Se dibuja un fondo simplificado del mapa de Ecuador
-           - Las distancias se omiten para evitar sobrecarga visual
-           
+            - Las ciudades se posicionan según sus coordenadas geográficas
+            - Se dibuja un fondo simplificado del mapa de Ecuador
+            - Las distancias se omiten para evitar sobrecarga visual
+            
         Si se proporciona una ruta, esta se resalta en rojo y con mayor grosor.
-    """
-    def visualizar_grafo(self, ruta=None, usar_mapa_real=False, ax=None):
+        """
         # Crear un nuevo gráfico si no se proporcionó uno
         if ax is None:
             fig, ax = plt.subplots(figsize=(15, 10))
@@ -695,7 +693,8 @@ class GrafoEcuador:
         
         return ax
         
-    """
+    def visualizar_grafo_interactivo(self, ruta=None):
+        """
         Crea una versión interactiva del grafo con funcionalidades adicionales.
         
         Args:
@@ -711,14 +710,13 @@ class GrafoEcuador:
         - Posibilidad de hacer zoom y pan
         - Mejor visualización de las rutas resaltadas
         - Preparación para futuras funcionalidades interactivas como:
-          * Tooltips con información de ciudades
-          * Selección de rutas
-          * Comparación de algoritmos
-          
+            * Tooltips con información de ciudades
+            * Selección de rutas
+            * Comparación de algoritmos
+            
         Nota: Esta es una versión base que puede ser extendida con más funcionalidades
         interactivas según las necesidades específicas.
-    """
-    def visualizar_grafo_interactivo(self, ruta=None):
+        """
         fig, ax = plt.subplots(figsize=(15, 10))
         
         self.visualizar_grafo(ruta=ruta, usar_mapa_real=True, ax=ax)

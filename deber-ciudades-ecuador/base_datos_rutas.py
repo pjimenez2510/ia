@@ -6,37 +6,38 @@ import sqlite3
 # Se utiliza para importar/exportar datos en formato JSON
 import json
 
-"""
+class BaseDatosRutas:
+    """
     Clase que maneja la base de datos de rutas entre ciudades del Ecuador.
     Permite almacenar ciudades con sus coordenadas geográficas y las rutas
     que las conectan, incluyendo la distancia entre ellas.
-"""
-class BaseDatosRutas:
-    
     """
-        Constructor de la clase BaseDatosRutas.
-        
-        Args:
-            ruta_db (str): Ruta del archivo de la base de datos. Por defecto es 'rutas_ecuador.db'
-        
-        Inicializa la conexión a la base de datos y crea las tablas necesarias
-        si no existen.
-    """
+
     def __init__(self, ruta_db='rutas_ecuador.db'):
+    """
+    Constructor de la clase BaseDatosRutas.
+    
+    Args:
+        ruta_db (str): Ruta del archivo de la base de datos. Por defecto es 'rutas_ecuador.db'
+    
+    Inicializa la conexión a la base de datos y crea las tablas necesarias
+    si no existen.
+    """
         self.ruta_db = ruta_db
         self.conexion = None
         self.cursor = None
         self.conectar()
         self.crear_tablas()
+
+    def conectar(self):
     
     """
-        Método para conectar a la base de datos.
-        
-        Establece una conexión con la base de datos SQLite especificada en self.ruta_db.
-        Inicializa tanto la conexión como el cursor que se usará para ejecutar consultas.
-        Si hay algún error durante la conexión, lo captura y muestra un mensaje.
+    Método para conectar a la base de datos.
+    
+    Establece una conexión con la base de datos SQLite especificada en self.ruta_db.
+    Inicializa tanto la conexión como el cursor que se usará para ejecutar consultas.
+    Si hay algún error durante la conexión, lo captura y muestra un mensaje.
     """
-    def conectar(self):
         try:
             # Establece la conexión con la base de datos
             self.conexion = sqlite3.connect(self.ruta_db)
@@ -45,17 +46,18 @@ class BaseDatosRutas:
             print(f"Conexión establecida con {self.ruta_db}")
         except sqlite3.Error as e:
             print(f"Error al conectar a la base de datos: {e}")
+
+    def crear_tablas(self):
     
     """
-        Método para crear las tablas necesarias en la base de datos.
-        
-        Crea dos tablas principales:
-        1. 'ciudades': Almacena información de cada ciudad incluyendo sus coordenadas
-        2. 'rutas': Almacena las conexiones entre ciudades y sus distancias
-        
-        También verifica y agrega las columnas de coordenadas si no existen.
+    Método para crear las tablas necesarias en la base de datos.
+    
+    Crea dos tablas principales:
+    1. 'ciudades': Almacena información de cada ciudad incluyendo sus coordenadas
+    2. 'rutas': Almacena las conexiones entre ciudades y sus distancias
+    
+    También verifica y agrega las columnas de coordenadas si no existen.
     """
-    def crear_tablas(self):
         try:
             # Crear tabla de ciudades con sus coordenadas
             self.cursor.execute('''
@@ -95,7 +97,8 @@ class BaseDatosRutas:
         except sqlite3.Error as e:
             print(f"Error al crear las tablas: {e}")
     
-    """
+    def agregar_ciudad(self, nombre, latitud=None, longitud=None):
+        """
         Método para agregar una nueva ciudad a la base de datos.
         
         Args:
@@ -105,8 +108,7 @@ class BaseDatosRutas:
             
         Returns:
             int or None: ID de la ciudad si se agregó correctamente, None si hubo error
-    """
-    def agregar_ciudad(self, nombre, latitud=None, longitud=None):
+        """
         try:
             # Intentar insertar la ciudad, ignorando si ya existe
             self.cursor.execute(
@@ -131,7 +133,8 @@ class BaseDatosRutas:
             print(f"Error al agregar ciudad {nombre}: {e}")
             return None
     
-    """
+    def actualizar_coordenadas(self, nombre, latitud, longitud):
+        """
         Método para actualizar las coordenadas geográficas de una ciudad existente.
         
         Args:
@@ -141,8 +144,7 @@ class BaseDatosRutas:
             
         Returns:
             bool: True si la actualización fue exitosa, False si hubo error
-    """
-    def actualizar_coordenadas(self, nombre, latitud, longitud):
+        """
         try:
             # Actualizar las coordenadas de la ciudad especificada
             self.cursor.execute(
@@ -155,7 +157,8 @@ class BaseDatosRutas:
             print(f"Error al actualizar coordenadas de {nombre}: {e}")
             return False
     
-    """
+    def obtener_coordenadas(self, nombre):
+        """
         Método para obtener las coordenadas geográficas de una ciudad.
         
         Args:
@@ -163,8 +166,7 @@ class BaseDatosRutas:
             
         Returns:
             tuple: (latitud, longitud) si la ciudad existe, (None, None) si no existe o hay error
-    """
-    def obtener_coordenadas(self, nombre):
+        """
         try:
             # Consultar las coordenadas de la ciudad especificada
             self.cursor.execute("SELECT latitud, longitud FROM ciudades WHERE nombre = ?", (nombre,))
@@ -173,8 +175,9 @@ class BaseDatosRutas:
         except sqlite3.Error as e:
             print(f"Error al obtener coordenadas de {nombre}: {e}")
             return (None, None)
-    
-    """
+            
+    def agregar_ruta(self, origen, destino, distancia, origen_lat=None, origen_lng=None, destino_lat=None, destino_lng=None):
+        """
         Método para agregar una nueva ruta entre dos ciudades.
         
         Args:
@@ -188,8 +191,7 @@ class BaseDatosRutas:
             
         Returns:
             bool: True si la ruta se agregó correctamente, False si hubo error
-    """
-    def agregar_ruta(self, origen, destino, distancia, origen_lat=None, origen_lng=None, destino_lat=None, destino_lng=None):
+        """
         try:
             # Agregar o actualizar las ciudades con sus coordenadas
             origen_id = self.agregar_ciudad(origen, origen_lat, origen_lng)
@@ -213,7 +215,8 @@ class BaseDatosRutas:
             print(f"Error al agregar ruta {origen}-{destino}: {e}")
             return False
     
-    """
+    def eliminar_ruta(self, origen, destino):
+        """
         Método para eliminar una ruta entre dos ciudades.
         
         Args:
@@ -222,8 +225,7 @@ class BaseDatosRutas:
             
         Returns:
             bool: True si la ruta se eliminó correctamente, False si hubo error
-    """
-    def eliminar_ruta(self, origen, destino):
+        """
         try:
             # Obtener los IDs de las ciudades
             self.cursor.execute("SELECT id FROM ciudades WHERE nombre = ?", (origen,))
@@ -253,7 +255,8 @@ class BaseDatosRutas:
             print(f"Error al eliminar ruta {origen}-{destino}: {e}")
             return False
     
-    """
+    def eliminar_ciudad(self, nombre):
+        """
         Método para eliminar una ciudad y todas sus rutas asociadas de la base de datos.
         
         Args:
@@ -261,8 +264,7 @@ class BaseDatosRutas:
             
         Returns:
             bool: True si la ciudad se eliminó correctamente, False si hubo error o la ciudad no existe
-    """
-    def eliminar_ciudad(self, nombre):
+        """
         try:
             # Obtener el ID de la ciudad a eliminar
             self.cursor.execute("SELECT id FROM ciudades WHERE nombre = ?", (nombre,))
@@ -285,7 +287,8 @@ class BaseDatosRutas:
             print(f"Error al eliminar ciudad {nombre}: {e}")
             return False
     
-    """
+    def obtener_distancia(self, origen, destino):
+        """
         Método para obtener la distancia entre dos ciudades.
         
         Args:
@@ -294,8 +297,7 @@ class BaseDatosRutas:
             
         Returns:
             int or None: Distancia en kilómetros si existe la ruta, None si no existe o hay error
-    """
-    def obtener_distancia(self, origen, destino):
+        """
         try:
             # Consultar la distancia entre las dos ciudades
             self.cursor.execute("""
@@ -312,13 +314,13 @@ class BaseDatosRutas:
             print(f"Error al obtener distancia {origen}-{destino}: {e}")
             return None
     
-    """
+    def listar_ciudades(self):
+        """
         Método para obtener la lista de todas las ciudades en la base de datos.
         
         Returns:
             list: Lista de nombres de ciudades ordenados alfabéticamente
-    """
-    def listar_ciudades(self):
+        """
         try:
             # Consultar todos los nombres de ciudades ordenados alfabéticamente
             self.cursor.execute("SELECT nombre FROM ciudades ORDER BY nombre")
@@ -327,14 +329,14 @@ class BaseDatosRutas:
             print(f"Error al listar ciudades: {e}")
             return []
     
-    """
+    def listar_ciudades_con_coordenadas(self):
+        """
         Método para obtener la lista de todas las ciudades con sus coordenadas geográficas.
         
         Returns:
             list: Lista de diccionarios con información de cada ciudad:
-                  [{"nombre": str, "latitud": float, "longitud": float}, ...]
-    """
-    def listar_ciudades_con_coordenadas(self):
+                    [{"nombre": str, "latitud": float, "longitud": float}, ...]
+        """
         try:
             # Consultar todas las ciudades con sus coordenadas
             self.cursor.execute("SELECT nombre, latitud, longitud FROM ciudades ORDER BY nombre")
@@ -343,7 +345,8 @@ class BaseDatosRutas:
             print(f"Error al listar ciudades con coordenadas: {e}")
             return []
     
-    """
+    def listar_conexiones(self, ciudad):
+        """
         Método para obtener todas las conexiones (rutas) desde una ciudad específica.
         
         Args:
@@ -351,9 +354,8 @@ class BaseDatosRutas:
             
         Returns:
             dict: Diccionario con las ciudades conectadas y sus distancias:
-                  {"ciudad_destino": distancia, ...}
-    """
-    def listar_conexiones(self, ciudad):
+                    {"ciudad_destino": distancia, ...}
+        """
         try:
             # Consultar todas las rutas que parten desde la ciudad especificada
             self.cursor.execute("""
@@ -370,16 +372,16 @@ class BaseDatosRutas:
             print(f"Error al listar conexiones de {ciudad}: {e}")
             return {}
     
-    """
+    def obtener_grafo_completo(self):
+        """
         Método para obtener una representación completa del grafo de ciudades y rutas.
         
         Returns:
             dict: Diccionario que representa el grafo completo, donde:
-                  - Las claves son nombres de ciudades
-                  - Los valores son diccionarios con las ciudades conectadas y sus distancias
-                  Ejemplo: {"Quito": {"Ambato": 111, "Latacunga": 89}, ...}
-    """
-    def obtener_grafo_completo(self):
+                    - Las claves son nombres de ciudades
+                    - Los valores son diccionarios con las ciudades conectadas y sus distancias
+                    Ejemplo: {"Quito": {"Ambato": 111, "Latacunga": 89}, ...}
+        """
         grafo = {}
         
         try:
@@ -395,16 +397,16 @@ class BaseDatosRutas:
             print(f"Error al obtener grafo completo: {e}")
             return {}
     
-    """
+    def obtener_grafo_completo_con_coords(self):
+        """
         Método para obtener una representación completa del grafo incluyendo coordenadas.
         
         Returns:
             tuple: (grafo, coords) donde:
-                   - grafo: Diccionario con la estructura de conexiones
-                   - coords: Diccionario con las coordenadas de cada ciudad
-                   Ejemplo: ({"Quito": {"Ambato": 111}}, {"Quito": {"lat": -0.18, "lng": -78.46}})
-    """
-    def obtener_grafo_completo_con_coords(self):
+                    - grafo: Diccionario con la estructura de conexiones
+                    - coords: Diccionario con las coordenadas de cada ciudad
+                    Ejemplo: ({"Quito": {"Ambato": 111}}, {"Quito": {"lat": -0.18, "lng": -78.46}})
+        """
         grafo = {}
         coords = {}
         
@@ -432,7 +434,8 @@ class BaseDatosRutas:
             print(f"Error al obtener grafo completo con coordenadas: {e}")
             return {}, {}
     
-    """
+    def importar_grafo(self, grafo_dict, coords_dict=None):
+        """
         Método para importar un grafo completo a la base de datos.
         
         Args:
@@ -441,8 +444,7 @@ class BaseDatosRutas:
             
         Returns:
             bool: True si la importación fue exitosa, False si hubo error
-    """
-    def importar_grafo(self, grafo_dict, coords_dict=None):
+        """
         try:
             # Limpiar las tablas existentes
             self.cursor.execute("DELETE FROM rutas")
@@ -470,8 +472,9 @@ class BaseDatosRutas:
         except sqlite3.Error as e:
             print(f"Error al importar grafo: {e}")
             return False
-    
-    """
+
+    def importar_desde_json(self, ruta_archivo):
+        """
         Método para importar un grafo desde un archivo JSON.
         
         Args:
@@ -479,8 +482,7 @@ class BaseDatosRutas:
             
         Returns:
             bool: True si la importación fue exitosa, False si hubo error
-    """
-    def importar_desde_json(self, ruta_archivo):
+        """
         try:
             # Leer el archivo JSON
             with open(ruta_archivo, 'r', encoding='utf-8') as f:
@@ -497,7 +499,8 @@ class BaseDatosRutas:
             print(f"Error al importar desde JSON: {e}")
             return False
     
-    """
+    def exportar_a_json(self, ruta_archivo):
+        """
         Método para exportar el grafo completo con coordenadas a un archivo JSON.
         
         Args:
@@ -505,8 +508,7 @@ class BaseDatosRutas:
             
         Returns:
             bool: True si la exportación fue exitosa, False si hubo error
-    """
-    def exportar_a_json(self, ruta_archivo):
+        """
         try:
             # Obtener el grafo completo con coordenadas
             grafo_dict, coords_dict = self.obtener_grafo_completo_con_coords()
@@ -526,13 +528,13 @@ class BaseDatosRutas:
             print(f"Error al exportar a JSON: {e}")
             return False
     
-    """
+    def cerrar(self):
+        """
         Método para cerrar la conexión con la base de datos.
         
         Este método debe ser llamado cuando ya no se necesite la conexión
         para liberar los recursos del sistema.
-    """
-    def cerrar(self):
+        """
         if self.conexion:
             self.conexion.close()
             print("Conexión a la base de datos cerrada")

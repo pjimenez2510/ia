@@ -14,7 +14,6 @@ import os
 
 # Agregar el directorio actual al path de Python para poder importar módulos locales
 # Esto es necesario para importar los módulos grafo_ecuador y base_datos_rutas
-# que están en el mismo directorio que este archivo
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Importación de módulos locales
@@ -332,6 +331,7 @@ class AplicacionRutas:
         # Definir umbral según el modo de visualización
         umbral = 0.05 if usar_mapa_real else 0.1
         return ciudad_mas_cercana if distancia_minima < umbral else None
+        
     def mostrar_menu_ciudad(self, event):
         
         """
