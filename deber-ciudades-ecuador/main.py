@@ -1,15 +1,39 @@
-import tkinter as tk
-from interfaz_grafo import AplicacionRutas
-import os
-import sys
-import json
-from grafo_ecuador import GrafoEcuador
-from base_datos_rutas import BaseDatosRutas
+# Módulos de la biblioteca estándar
+ # Biblioteca para crear la interfaz gráfica de usuario (GUI)
+import tkinter as tk 
+# Funcionalidades para interactuar con el sistema operativo y manejo de archivos
+import os 
+# Acceso a variables y funciones específicas del intérprete de Python
+import sys 
+# Funcionalidades para codificar y decodificar datos en formato JSON
+import json 
+
+# Módulos locales
+# Clase principal que implementa la interfaz gráfica de la aplicación
+from interfaz_grafo import AplicacionRutas 
+# Clase que maneja la estructura de datos del grafo de ciudades
+from grafo_ecuador import GrafoEcuador 
+# Clase para gestionar la base de datos SQLite de rutas
+from base_datos_rutas import BaseDatosRutas 
 
 def inicializar_sistema():
     """
-    Inicializa el sistema, asegurando que todos los archivos necesarios estén disponibles
-    y que la base de datos contenga las coordenadas geográficas.
+    Inicializa el sistema de rutas de Ecuador, asegurando que todos los archivos necesarios
+    estén disponibles y que la base de datos contenga las coordenadas geográficas.
+    
+    Este método realiza las siguientes tareas:
+    1. Verifica la existencia del archivo de base de datos 'rutas_ecuador.db'
+    2. Verifica la existencia del archivo JSON 'grafo_ecuador.json'
+    3. Si el archivo JSON no existe:
+       - Crea una instancia de GrafoEcuador con datos predeterminados
+       - Prepara los datos incluyendo coordenadas para el archivo JSON
+       - Guarda el grafo en formato JSON
+    4. Verifica si la base de datos tiene las columnas de coordenadas
+    5. Actualiza las coordenadas faltantes en la base de datos
+    6. Cierra la conexión a la base de datos
+    
+    Nota: Este método debe ser llamado al inicio de la aplicación para asegurar
+    que todos los componentes necesarios estén disponibles y configurados correctamente.
     """
     print("Inicializando el sistema de rutas de Ecuador...")
     
@@ -47,8 +71,22 @@ def inicializar_sistema():
 
 def actualizar_coordenadas_faltantes(db):
     """
-    Actualiza las coordenadas faltantes en la base de datos utilizando
+    Actualiza las coordenadas geográficas faltantes en la base de datos utilizando
     las coordenadas predeterminadas del GrafoEcuador.
+    
+    Parámetros:
+        db (BaseDatosRutas): Instancia de la base de datos a actualizar
+    
+    Proceso:
+    1. Obtiene la lista de ciudades de la base de datos con sus coordenadas actuales
+    2. Crea una instancia de GrafoEcuador para acceder a las coordenadas predeterminadas
+    3. Para cada ciudad:
+       - Verifica si faltan coordenadas (latitud o longitud)
+       - Si faltan y existen en el grafo predeterminado, actualiza la base de datos
+    4. Muestra un resumen de las actualizaciones realizadas
+    
+    Nota: Esta función es llamada durante la inicialización del sistema para asegurar
+    que todas las ciudades tengan coordenadas válidas.
     """
     # Obtener ciudades de la base de datos
     ciudades = db.listar_ciudades_con_coordenadas()
@@ -75,7 +113,25 @@ def actualizar_coordenadas_faltantes(db):
 
 def verificar_dependencias():
     """
-    Verifica que todas las bibliotecas necesarias estén instaladas.
+    Verifica que todas las bibliotecas necesarias para el funcionamiento del sistema
+    estén instaladas correctamente.
+    
+    Dependencias verificadas:
+    - tkinter: Para la interfaz gráfica de usuario
+    - matplotlib: Para la visualización de grafos y mapas
+    - networkx: Para el manejo y análisis de grafos
+    
+    Proceso:
+    1. Define un diccionario con las dependencias y sus descripciones
+    2. Intenta importar cada módulo
+    3. Si alguna dependencia falta:
+       - Muestra un mensaje de error con las dependencias faltantes
+       - Proporciona instrucciones para instalarlas
+       - Retorna False
+    4. Si todas las dependencias están presentes, retorna True
+    
+    Retorna:
+        bool: True si todas las dependencias están instaladas, False en caso contrario
     """
     dependencias = {
         "tkinter": "Interfaz gráfica",
@@ -102,7 +158,33 @@ def verificar_dependencias():
 
 def main():
     """
-    Función principal que ejecuta la aplicación.
+    Función principal que ejecuta la aplicación de gestión de rutas de Ecuador.
+    
+    Esta función es el punto de entrada de la aplicación y maneja todo el ciclo de vida
+    de la misma. Se encarga de:
+    1. Verificar las dependencias necesarias
+    2. Inicializar el sistema
+    3. Crear y ejecutar la interfaz gráfica
+    4. Manejar errores y excepciones
+    
+    Flujo de ejecución:
+    1. Verifica las dependencias del sistema
+       - Si faltan dependencias, muestra mensaje y termina
+    2. Inicializa el sistema
+       - Crea archivos necesarios si no existen
+       - Configura la base de datos
+       - Actualiza coordenadas faltantes
+    3. Crea la ventana principal de la aplicación
+    4. Configura el manejador de cierre de ventana
+    5. Inicia el bucle principal de la interfaz gráfica
+    
+    Manejo de errores:
+    - Captura y muestra cualquier excepción que ocurra durante la ejecución
+    - Muestra el stack trace completo para facilitar la depuración
+    - Espera a que el usuario presione Enter antes de cerrar en caso de error
+    
+    Nota: Esta función debe ser llamada solo cuando el script se ejecuta directamente,
+    no cuando se importa como módulo.
     """
     try:
         # Verificar dependencias
