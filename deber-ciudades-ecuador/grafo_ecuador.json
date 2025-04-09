@@ -1,219 +1,381 @@
 {
-  "Ambato": {
-    "Azogues": 280,
-    "Babahoyo": 212,
-    "Cuenca": 321,
-    "Esmeraldas": 371,
-    "Guaranda": 92,
-    "Guayaquil": 277,
-    "Ibarra": 254,
-    "Latacunga": 41,
-    "Loja": 529,
-    "Baños": 40,
-    "Riobamba": 54,
-    "Puyo": 102
+  "grafo": {
+    "Ambato": {
+      "Azogues": 280,
+      "Babahoyo": 212,
+      "Cuenca": 321,
+      "Esmeraldas": 371,
+      "Guaranda": 92,
+      "Guayaquil": 277,
+      "Ibarra": 254,
+      "Latacunga": 41,
+      "Loja": 529,
+      "Baños": 40,
+      "Quito": 111,
+      "Riobamba": 54,
+      "Puyo": 102
+    },
+    "Azogues": {
+      "Ambato": 280,
+      "Babahoyo": 231,
+      "Cuenca": 41,
+      "Guaranda": 260,
+      "Guayaquil": 209,
+      "Riobamba": 227,
+      "Machala": 194
+    },
+    "Babahoyo": {
+      "Ambato": 212,
+      "Azogues": 231,
+      "Cuenca": 272,
+      "Guaranda": 123,
+      "Guayaquil": 63,
+      "Riobamba": 177,
+      "Quevedo": 103,
+      "Sto. Domingo": 205
+    },
+    "Cuenca": {
+      "Ambato": 321,
+      "Azogues": 41,
+      "Babahoyo": 272,
+      "Guayaquil": 250,
+      "Loja": 253,
+      "Machala": 194,
+      "Riobamba": 272
+    },
+    "Esmeraldas": {
+      "Ambato": 371,
+      "Quito": 318,
+      "Sto. Domingo": 177,
+      "Quininde": 98
+    },
+    "Guaranda": {
+      "Ambato": 92,
+      "Azogues": 260,
+      "Babahoyo": 123,
+      "Guayaquil": 185,
+      "Riobamba": 107
+    },
+    "Guayaquil": {
+      "Ambato": 277,
+      "Azogues": 209,
+      "Babahoyo": 63,
+      "Cuenca": 250,
+      "Machala": 200,
+      "Quevedo": 175,
+      "Salinas": 173
+    },
+    "Ibarra": {
+      "Ambato": 254,
+      "Quito": 115,
+      "Tulcán": 127,
+      "Otavalo": 26
+    },
+    "Latacunga": {
+      "Ambato": 41,
+      "Quito": 89,
+      "Riobamba": 95,
+      "Aloag": 56
+    },
+    "Loja": {
+      "Ambato": 529,
+      "Cuenca": 253,
+      "Machala": 253,
+      "Zamora": 57
+    },
+    "Quito": {
+      "Ambato": 111,
+      "Ibarra": 115,
+      "Latacunga": 89,
+      "Otavalo": 106,
+      "Riobamba": 188,
+      "Sto. Domingo": 133,
+      "Baeza": 108
+    },
+    "Riobamba": {
+      "Ambato": 54,
+      "Azogues": 227,
+      "Babahoyo": 177,
+      "Cuenca": 272,
+      "Guaranda": 107,
+      "Latacunga": 95,
+      "Quito": 188,
+      "Baños": 62
+    },
+    "Sto. Domingo": {
+      "Ambato": 194,
+      "Babahoyo": 205,
+      "Esmeraldas": 177,
+      "Quito": 133,
+      "Quevedo": 113,
+      "Quininde": 130
+    },
+    "Machala": {
+      "Cuenca": 194,
+      "Guayaquil": 200,
+      "Loja": 253,
+      "Huaquillas": 74
+    },
+    "Baños": {
+      "Ambato": 40,
+      "Riobamba": 62,
+      "Puyo": 60,
+      "Tena": 139
+    },
+    "Puyo": {
+      "Ambato": 102,
+      "Baños": 60,
+      "Tena": 85,
+      "Macas": 135
+    },
+    "Tena": {
+      "Ambato": 180,
+      "Baños": 139,
+      "Puyo": 85,
+      "Quito": 186,
+      "Baeza": 52
+    },
+    "Tulcán": {
+      "Ibarra": 127,
+      "Quito": 238,
+      "Rumichaca": 3
+    },
+    "Otavalo": {
+      "Ibarra": 26,
+      "Quito": 106
+    },
+    "Quevedo": {
+      "Babahoyo": 103,
+      "Guayaquil": 175,
+      "Sto. Domingo": 113,
+      "Portoviejo": 188
+    },
+    "Portoviejo": {
+      "Quevedo": 188,
+      "Manta": 45,
+      "Bahía de Caraquez": 65
+    },
+    "Manta": {
+      "Portoviejo": 45,
+      "Bahía de Caraquez": 89
+    },
+    "Bahía de Caraquez": {
+      "Portoviejo": 65,
+      "Manta": 89,
+      "Pedernales": 120
+    },
+    "Pedernales": {
+      "Bahía de Caraquez": 120,
+      "Sto. Domingo": 193
+    },
+    "Salinas": {
+      "Guayaquil": 173
+    },
+    "Huaquillas": {
+      "Machala": 74
+    },
+    "Baeza": {
+      "Quito": 108,
+      "Tena": 52,
+      "Nueva Loja": 149
+    },
+    "Nueva Loja": {
+      "Baeza": 149,
+      "Pte. San Miguel": 89
+    },
+    "Pte. San Miguel": {
+      "Nueva Loja": 89,
+      "Pto. Putumayo": 140
+    },
+    "Pto. Putumayo": {
+      "Pte. San Miguel": 140
+    },
+    "Macas": {
+      "Puyo": 135,
+      "Pto. Morona": 184
+    },
+    "Pto. Morona": {
+      "Macas": 184
+    },
+    "Zamora": {
+      "Loja": 57
+    },
+    "Quininde": {
+      "Esmeraldas": 98,
+      "Sto. Domingo": 130,
+      "Muisne": 145
+    },
+    "Muisne": {
+      "Quininde": 145,
+      "Esmeraldas": 98
+    },
+    "Aloag": {
+      "Latacunga": 56,
+      "Quito": 30
+    },
+    "Rumichaca": {
+      "Tulcán": 3
+    },
+    "Macara": {
+      "Loja": 195
+    }
   },
-  "Azogues": {
-    "Ambato": 280,
-    "Babahoyo": 231,
-    "Cuenca": 41,
-    "Guaranda": 260,
-    "Guayaquil": 209,
-    "Riobamba": 227,
-    "Machala": 194
-  },
-  "Babahoyo": {
-    "Ambato": 212,
-    "Azogues": 231,
-    "Cuenca": 272,
-    "Guaranda": 123,
-    "Guayaquil": 63,
-    "Riobamba": 177,
-    "Quevedo": 103,
-    "Sto. Domingo": 205
-  },
-  "Cuenca": {
-    "Ambato": 321,
-    "Azogues": 41,
-    "Babahoyo": 272,
-    "Guayaquil": 250,
-    "Loja": 253,
-    "Machala": 194,
-    "Riobamba": 272
-  },
-  "Esmeraldas": {
-    "Ambato": 371,
-    "Quito": 318,
-    "Sto. Domingo": 177,
-    "Quininde": 98
-  },
-  "Guaranda": {
-    "Ambato": 92,
-    "Azogues": 260,
-    "Babahoyo": 123,
-    "Guayaquil": 185,
-    "Riobamba": 107
-  },
-  "Guayaquil": {
-    "Ambato": 277,
-    "Azogues": 209,
-    "Babahoyo": 63,
-    "Cuenca": 250,
-    "Machala": 200,
-    "Quevedo": 175,
-    "Salinas": 173
-  },
-  "Ibarra": {
-    "Ambato": 254,
-    "Quito": 115,
-    "Tulcán": 127,
-    "Otavalo": 26
-  },
-  "Latacunga": {
-    "Ambato": 41,
-    "Quito": 89,
-    "Riobamba": 95,
-    "Aloag": 56
-  },
-  "Loja": {
-    "Ambato": 529,
-    "Cuenca": 253,
-    "Machala": 253,
-    "Zamora": 57
-  },
-  "Quito": {
-    "Ibarra": 115,
-    "Latacunga": 89,
-    "Otavalo": 106,
-    "Riobamba": 188,
-    "Sto. Domingo": 133,
-    "Baeza": 108
-  },
-  "Riobamba": {
-    "Ambato": 54,
-    "Azogues": 227,
-    "Babahoyo": 177,
-    "Cuenca": 272,
-    "Guaranda": 107,
-    "Latacunga": 95,
-    "Quito": 188,
-    "Baños": 62
-  },
-  "Sto. Domingo": {
-    "Ambato": 194,
-    "Babahoyo": 205,
-    "Esmeraldas": 177,
-    "Quito": 133,
-    "Quevedo": 113,
-    "Quininde": 130
-  },
-  "Machala": {
-    "Cuenca": 194,
-    "Guayaquil": 200,
-    "Loja": 253,
-    "Huaquillas": 74
-  },
-  "Baños": {
-    "Ambato": 40,
-    "Riobamba": 62,
-    "Puyo": 60,
-    "Tena": 139
-  },
-  "Puyo": {
-    "Ambato": 102,
-    "Baños": 60,
-    "Tena": 85,
-    "Macas": 135
-  },
-  "Tena": {
-    "Ambato": 180,
-    "Baños": 139,
-    "Puyo": 85,
-    "Quito": 186,
-    "Baeza": 52
-  },
-  "Tulcán": {
-    "Ibarra": 127,
-    "Quito": 238,
-    "Rumichaca": 3
-  },
-  "Otavalo": {
-    "Ibarra": 26,
-    "Quito": 106
-  },
-  "Quevedo": {
-    "Babahoyo": 103,
-    "Guayaquil": 175,
-    "Sto. Domingo": 113,
-    "Portoviejo": 188
-  },
-  "Portoviejo": {
-    "Quevedo": 188,
-    "Manta": 45,
-    "Bahía de Caraquez": 65
-  },
-  "Manta": {
-    "Portoviejo": 45,
-    "Bahía de Caraquez": 89
-  },
-  "Bahía de Caraquez": {
-    "Portoviejo": 65,
-    "Manta": 89,
-    "Pedernales": 120
-  },
-  "Pedernales": {
-    "Bahía de Caraquez": 120,
-    "Sto. Domingo": 193
-  },
-  "Salinas": {
-    "Guayaquil": 173
-  },
-  "Huaquillas": {
-    "Machala": 74
-  },
-  "Baeza": {
-    "Quito": 108,
-    "Tena": 52,
-    "Nueva Loja": 149
-  },
-  "Nueva Loja": {
-    "Baeza": 149,
-    "Pte. San Miguel": 89
-  },
-  "Pte. San Miguel": {
-    "Nueva Loja": 89,
-    "Pto. Putumayo": 140
-  },
-  "Pto. Putumayo": {
-    "Pte. San Miguel": 140
-  },
-  "Macas": {
-    "Puyo": 135,
-    "Pto. Morona": 184
-  },
-  "Pto. Morona": {
-    "Macas": 184
-  },
-  "Zamora": {
-    "Loja": 57
-  },
-  "Quininde": {
-    "Esmeraldas": 98,
-    "Sto. Domingo": 130,
-    "Muisne": 145
-  },
-  "Muisne": {
-    "Quininde": 145,
-    "Esmeraldas": 98
-  },
-  "Aloag": {
-    "Latacunga": 56,
-    "Quito": 30
-  },
-  "Rumichaca": {
-    "Tulcán": 3
-  },
-  "Macara": {
-    "Loja": 195
+  "coords": {
+    "Ambato": {
+      "lat": -1.2391,
+      "lng": -78.6273
+    },
+    "Azogues": {
+      "lat": -2.7402,
+      "lng": -78.8467
+    },
+    "Babahoyo": {
+      "lat": -1.8017,
+      "lng": -79.5343
+    },
+    "Cuenca": {
+      "lat": -2.9001,
+      "lng": -79.0059
+    },
+    "Esmeraldas": {
+      "lat": 0.9592,
+      "lng": -79.6539
+    },
+    "Guaranda": {
+      "lat": -1.5908,
+      "lng": -79.0012
+    },
+    "Guayaquil": {
+      "lat": -2.1894,
+      "lng": -79.8891
+    },
+    "Ibarra": {
+      "lat": 0.3517,
+      "lng": -78.1223
+    },
+    "Latacunga": {
+      "lat": -0.9304,
+      "lng": -78.6155
+    },
+    "Loja": {
+      "lat": -3.9931,
+      "lng": -79.2042
+    },
+    "Macas": {
+      "lat": -2.3046,
+      "lng": -78.1192
+    },
+    "Machala": {
+      "lat": -3.2582,
+      "lng": -79.9607
+    },
+    "Nueva Loja": {
+      "lat": 0.0876,
+      "lng": -76.892
+    },
+    "Portoviejo": {
+      "lat": -1.0546,
+      "lng": -80.4545
+    },
+    "Puyo": {
+      "lat": -1.4854,
+      "lng": -77.996
+    },
+    "Quito": {
+      "lat": -0.1807,
+      "lng": -78.4678
+    },
+    "Riobamba": {
+      "lat": -1.6635,
+      "lng": -78.6535
+    },
+    "Tena": {
+      "lat": -0.994,
+      "lng": -77.8159
+    },
+    "Tulcán": {
+      "lat": 0.8124,
+      "lng": -77.7172
+    },
+    "Zamora": {
+      "lat": -4.0678,
+      "lng": -78.9551
+    },
+    "Aloag": {
+      "lat": -0.4583,
+      "lng": -78.5809
+    },
+    "Sto. Domingo": {
+      "lat": -0.2522,
+      "lng": -79.1716
+    },
+    "Baños": {
+      "lat": -1.3926,
+      "lng": -78.4258
+    },
+    "Bahía de Caraquez": {
+      "lat": -0.5975,
+      "lng": -80.4239
+    },
+    "Baeza": {
+      "lat": -0.4605,
+      "lng": -77.8887
+    },
+    "Rumichaca": {
+      "lat": 0.8187,
+      "lng": -77.6657
+    },
+    "Macara": {
+      "lat": -4.3773,
+      "lng": -79.9434
+    },
+    "Huaquillas": {
+      "lat": -3.4766,
+      "lng": -80.2297
+    },
+    "Manta": {
+      "lat": -0.9676,
+      "lng": -80.7089
+    },
+    "Otavalo": {
+      "lat": 0.2343,
+      "lng": -78.261
+    },
+    "Salinas": {
+      "lat": -2.2013,
+      "lng": -80.9765
+    },
+    "San Lorenzo": {
+      "lat": 1.2864,
+      "lng": -78.8361
+    },
+    "Quevedo": {
+      "lat": -1.0287,
+      "lng": -79.4632
+    },
+    "Quininde": {
+      "lat": 0.3147,
+      "lng": -79.4701
+    },
+    "Pte. San Miguel": {
+      "lat": 1.1117,
+      "lng": -77.5822
+    },
+    "Pto. Putumayo": {
+      "lat": 0.0,
+      "lng": -75.0
+    },
+    "Pto. Morona": {
+      "lat": -2.9,
+      "lng": -77.75
+    },
+    "Muisne": {
+      "lat": 0.6099,
+      "lng": -80.021
+    },
+    "Pedernales": {
+      "lat": 0.0731,
+      "lng": -80.0532
+    }
   }
 }
