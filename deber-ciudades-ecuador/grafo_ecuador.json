@@ -1,64 +1,36 @@
 {
   "grafo": {
     "Ambato": {
-      "Azogues": 280,
-      "Babahoyo": 212,
-      "Cuenca": 321,
-      "Esmeraldas": 371,
-      "Guaranda": 92,
-      "Guayaquil": 277,
-      "Ibarra": 254,
-      "Latacunga": 41,
-      "Loja": 529,
       "Baños": 40,
-      "Quito": 111,
-      "Riobamba": 54,
-      "Puyo": 102
+      "Guaranda": 92,
+      "Latacunga": 41,
+      "Puyo": 102,
+      "Riobamba": 54
     },
     "Azogues": {
-      "Ambato": 280,
-      "Babahoyo": 231,
       "Cuenca": 41,
-      "Guaranda": 260,
-      "Guayaquil": 209,
-      "Riobamba": 227,
-      "Machala": 194
+      "Riobamba": 227
     },
     "Babahoyo": {
-      "Ambato": 212,
-      "Azogues": 231,
-      "Cuenca": 272,
       "Guaranda": 123,
       "Guayaquil": 63,
-      "Riobamba": 177,
       "Quevedo": 103,
-      "Sto. Domingo": 205
+      "Riobamba": 177
     },
     "Cuenca": {
-      "Ambato": 321,
       "Azogues": 41,
-      "Babahoyo": 272,
-      "Guayaquil": 250,
       "Loja": 253,
-      "Machala": 194,
-      "Riobamba": 272
+      "Machala": 194
     },
     "Esmeraldas": {
-      "Ambato": 371,
-      "Quito": 318,
-      "Sto. Domingo": 177,
       "Quininde": 98
     },
     "Guaranda": {
       "Ambato": 92,
-      "Azogues": 260,
       "Babahoyo": 123,
-      "Guayaquil": 185,
       "Riobamba": 107
     },
     "Guayaquil": {
-      "Ambato": 277,
-      "Azogues": 209,
       "Babahoyo": 63,
       "Cuenca": 250,
       "Machala": 200,
@@ -66,61 +38,50 @@
       "Salinas": 173
     },
     "Ibarra": {
-      "Ambato": 254,
+      "Otavalo": 26,
       "Quito": 115,
-      "Tulcán": 127,
-      "Otavalo": 26
+      "Tulcán": 127
     },
     "Latacunga": {
       "Ambato": 41,
-      "Quito": 89,
-      "Riobamba": 95,
-      "Aloag": 56
+      "Aloag": 56,
+      "Riobamba": 95
     },
     "Loja": {
-      "Ambato": 529,
       "Cuenca": 253,
       "Machala": 253,
-      "Zamora": 57
+      "Zamora": 57,
+      "Macara": 195
     },
     "Quito": {
-      "Ambato": 111,
+      "Aloag": 30,
+      "Baeza": 108,
       "Ibarra": 115,
-      "Latacunga": 89,
-      "Otavalo": 106,
-      "Riobamba": 188,
-      "Sto. Domingo": 133,
-      "Baeza": 108
+      "Sto. Domingo": 133
     },
     "Riobamba": {
       "Ambato": 54,
-      "Azogues": 227,
       "Babahoyo": 177,
-      "Cuenca": 272,
+      "Baños": 62,
       "Guaranda": 107,
-      "Latacunga": 95,
-      "Quito": 188,
-      "Baños": 62
+      "Latacunga": 95
     },
     "Sto. Domingo": {
-      "Ambato": 194,
-      "Babahoyo": 205,
       "Esmeraldas": 177,
-      "Quito": 133,
+      "Pedernales": 193,
       "Quevedo": 113,
+      "Quito": 133,
       "Quininde": 130
     },
     "Machala": {
       "Cuenca": 194,
       "Guayaquil": 200,
-      "Loja": 253,
       "Huaquillas": 74
     },
     "Baños": {
       "Ambato": 40,
-      "Riobamba": 62,
       "Puyo": 60,
-      "Tena": 139
+      "Riobamba": 62
     },
     "Puyo": {
       "Ambato": 102,
@@ -129,15 +90,11 @@
       "Macas": 135
     },
     "Tena": {
-      "Ambato": 180,
-      "Baños": 139,
-      "Puyo": 85,
-      "Quito": 186,
-      "Baeza": 52
+      "Baeza": 52,
+      "Puyo": 85
     },
     "Tulcán": {
       "Ibarra": 127,
-      "Quito": 238,
       "Rumichaca": 3
     },
     "Otavalo": {
@@ -147,22 +104,22 @@
     "Quevedo": {
       "Babahoyo": 103,
       "Guayaquil": 175,
-      "Sto. Domingo": 113,
-      "Portoviejo": 188
+      "Portoviejo": 188,
+      "Sto. Domingo": 113
     },
     "Portoviejo": {
-      "Quevedo": 188,
       "Manta": 45,
-      "Bahía de Caraquez": 65
+      "Bahía de Caraquez": 65,
+      "Quevedo": 188
     },
     "Manta": {
       "Portoviejo": 45,
       "Bahía de Caraquez": 89
     },
     "Bahía de Caraquez": {
-      "Portoviejo": 65,
       "Manta": 89,
-      "Pedernales": 120
+      "Pedernales": 120,
+      "Portoviejo": 65
     },
     "Pedernales": {
       "Bahía de Caraquez": 120,
