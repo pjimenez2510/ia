@@ -14,15 +14,15 @@ class BaseDatosRutas:
     """
 
     def __init__(self, ruta_db='rutas_ecuador.db'):
-    """
-    Constructor de la clase BaseDatosRutas.
-    
-    Args:
-        ruta_db (str): Ruta del archivo de la base de datos. Por defecto es 'rutas_ecuador.db'
-    
-    Inicializa la conexión a la base de datos y crea las tablas necesarias
-    si no existen.
-    """
+        """
+        Constructor de la clase BaseDatosRutas.
+
+        Args:
+            ruta_db (str): Ruta del archivo de la base de datos. Por defecto es 'rutas_ecuador.db'
+
+        Inicializa la conexión a la base de datos y crea las tablas necesarias
+        si no existen.
+        """
         self.ruta_db = ruta_db
         self.conexion = None
         self.cursor = None
@@ -31,13 +31,13 @@ class BaseDatosRutas:
 
     def conectar(self):
     
-    """
-    Método para conectar a la base de datos.
-    
-    Establece una conexión con la base de datos SQLite especificada en self.ruta_db.
-    Inicializa tanto la conexión como el cursor que se usará para ejecutar consultas.
-    Si hay algún error durante la conexión, lo captura y muestra un mensaje.
-    """
+        """
+        Método para conectar a la base de datos.
+
+        Establece una conexión con la base de datos SQLite especificada en self.ruta_db.
+        Inicializa tanto la conexión como el cursor que se usará para ejecutar consultas.
+        Si hay algún error durante la conexión, lo captura y muestra un mensaje.
+        """
         try:
             # Establece la conexión con la base de datos
             self.conexion = sqlite3.connect(self.ruta_db)
@@ -49,15 +49,15 @@ class BaseDatosRutas:
 
     def crear_tablas(self):
     
-    """
-    Método para crear las tablas necesarias en la base de datos.
-    
-    Crea dos tablas principales:
-    1. 'ciudades': Almacena información de cada ciudad incluyendo sus coordenadas
-    2. 'rutas': Almacena las conexiones entre ciudades y sus distancias
-    
-    También verifica y agrega las columnas de coordenadas si no existen.
-    """
+        """
+        Método para crear las tablas necesarias en la base de datos.
+        
+        Crea dos tablas principales:
+        1. 'ciudades': Almacena información de cada ciudad incluyendo sus coordenadas
+        2. 'rutas': Almacena las conexiones entre ciudades y sus distancias
+        
+        También verifica y agrega las columnas de coordenadas si no existen.
+        """
         try:
             # Crear tabla de ciudades con sus coordenadas
             self.cursor.execute('''

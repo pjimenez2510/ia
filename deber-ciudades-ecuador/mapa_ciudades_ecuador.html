@@ -1,0 +1,1990 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4946b4dccab0039810bb92f101102afd {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_4946b4dccab0039810bb92f101102afd" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4946b4dccab0039810bb92f101102afd = L.map(
+                "map_4946b4dccab0039810bb92f101102afd",
+                {
+                    center: [-1.83, -78.18],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_8f680612828d9ada6dc31d7e2287035a = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_8f680612828d9ada6dc31d7e2287035a.addTo(map_4946b4dccab0039810bb92f101102afd);
+        
+    
+            var marker_cluster_025e8a274e61ae4da4a50655234515cb = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_127879afbb37ae5e69f89121173a5a56 = L.marker(
+                [-1.2391, -78.6273],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_32412087baee3d2c39b08a2369d35647 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_579ba962133621c39e7a6ebab63dc5ba = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1423a53164b8f6b8873733bc37f23802 = $(`<div id="html_1423a53164b8f6b8873733bc37f23802" style="width: 100.0%; height: 100.0%;"><b>Ambato</b><br>Conexiones:<br>- Guaranda: 92 km<br>- Latacunga: 41 km<br>- Riobamba: 54 km<br>- Baños: 40 km<br>- Puyo: 102 km<br></div>`)[0];
+                popup_579ba962133621c39e7a6ebab63dc5ba.setContent(html_1423a53164b8f6b8873733bc37f23802);
+            
+        
+
+        marker_127879afbb37ae5e69f89121173a5a56.bindPopup(popup_579ba962133621c39e7a6ebab63dc5ba)
+        ;
+
+        
+    
+    
+            marker_127879afbb37ae5e69f89121173a5a56.bindTooltip(
+                `<div>
+                     Ambato
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_127879afbb37ae5e69f89121173a5a56.setIcon(icon_32412087baee3d2c39b08a2369d35647);
+            
+    
+            var marker_effcfb2a5bc9fdf501074b9700a64aa2 = L.marker(
+                [-1.3926, -78.4258],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_d84bd615c6f41b7f2792809e0c545811 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f30e1b00375374e1fbb024b07280cd67 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_060075ac2efe6022392df8558411b11f = $(`<div id="html_060075ac2efe6022392df8558411b11f" style="width: 100.0%; height: 100.0%;"><b>Baños</b><br>Conexiones:<br>- Ambato: 40 km<br>- Riobamba: 62 km<br>- Puyo: 60 km<br></div>`)[0];
+                popup_f30e1b00375374e1fbb024b07280cd67.setContent(html_060075ac2efe6022392df8558411b11f);
+            
+        
+
+        marker_effcfb2a5bc9fdf501074b9700a64aa2.bindPopup(popup_f30e1b00375374e1fbb024b07280cd67)
+        ;
+
+        
+    
+    
+            marker_effcfb2a5bc9fdf501074b9700a64aa2.bindTooltip(
+                `<div>
+                     Baños
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_effcfb2a5bc9fdf501074b9700a64aa2.setIcon(icon_d84bd615c6f41b7f2792809e0c545811);
+            
+    
+            var marker_1f546c61c398ccf788c9cdda641c84f4 = L.marker(
+                [-1.5908, -79.0012],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_7a8c6ace40a0b099a93b189a91f9cee4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bdd19333123d291a9062a3b3184aebd2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1cd9a79b7fc68555a4c82b985ca71eb7 = $(`<div id="html_1cd9a79b7fc68555a4c82b985ca71eb7" style="width: 100.0%; height: 100.0%;"><b>Guaranda</b><br>Conexiones:<br>- Ambato: 92 km<br>- Babahoyo: 123 km<br>- Riobamba: 107 km<br></div>`)[0];
+                popup_bdd19333123d291a9062a3b3184aebd2.setContent(html_1cd9a79b7fc68555a4c82b985ca71eb7);
+            
+        
+
+        marker_1f546c61c398ccf788c9cdda641c84f4.bindPopup(popup_bdd19333123d291a9062a3b3184aebd2)
+        ;
+
+        
+    
+    
+            marker_1f546c61c398ccf788c9cdda641c84f4.bindTooltip(
+                `<div>
+                     Guaranda
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1f546c61c398ccf788c9cdda641c84f4.setIcon(icon_7a8c6ace40a0b099a93b189a91f9cee4);
+            
+    
+            var marker_ba04042cb0642ae94d5648a77a1a4326 = L.marker(
+                [-0.9304, -78.6155],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_18b92fb5db02896df2aa110e62c5bf53 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e44f39d4156e11fa8147ef71b8d382d4 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_674dd145ba281b2ba4652a84ab347618 = $(`<div id="html_674dd145ba281b2ba4652a84ab347618" style="width: 100.0%; height: 100.0%;"><b>Latacunga</b><br>Conexiones:<br>- Ambato: 41 km<br>- Aloag: 56 km<br></div>`)[0];
+                popup_e44f39d4156e11fa8147ef71b8d382d4.setContent(html_674dd145ba281b2ba4652a84ab347618);
+            
+        
+
+        marker_ba04042cb0642ae94d5648a77a1a4326.bindPopup(popup_e44f39d4156e11fa8147ef71b8d382d4)
+        ;
+
+        
+    
+    
+            marker_ba04042cb0642ae94d5648a77a1a4326.bindTooltip(
+                `<div>
+                     Latacunga
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ba04042cb0642ae94d5648a77a1a4326.setIcon(icon_18b92fb5db02896df2aa110e62c5bf53);
+            
+    
+            var marker_1cdde861736090be002a82953a2f6c11 = L.marker(
+                [-1.4854, -77.996],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_30540091675ddc3af0fabf42c5d27265 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a3d133461d64d6a3c96bf859b526fa46 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f36b51d7a01ea716f4da748c735249e1 = $(`<div id="html_f36b51d7a01ea716f4da748c735249e1" style="width: 100.0%; height: 100.0%;"><b>Puyo</b><br>Conexiones:<br>- Ambato: 102 km<br>- Baños: 60 km<br>- Tena: 85 km<br>- Macas: 135 km<br></div>`)[0];
+                popup_a3d133461d64d6a3c96bf859b526fa46.setContent(html_f36b51d7a01ea716f4da748c735249e1);
+            
+        
+
+        marker_1cdde861736090be002a82953a2f6c11.bindPopup(popup_a3d133461d64d6a3c96bf859b526fa46)
+        ;
+
+        
+    
+    
+            marker_1cdde861736090be002a82953a2f6c11.bindTooltip(
+                `<div>
+                     Puyo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1cdde861736090be002a82953a2f6c11.setIcon(icon_30540091675ddc3af0fabf42c5d27265);
+            
+    
+            var marker_c04a83ad00ac3eaacf3a60f1e5507d10 = L.marker(
+                [-1.6635, -78.6535],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_2aff2adbc21ff5ba534db2734ee07315 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3a2ceca4faacee569190c4e8a1fc0112 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_3fb9a5840ad3eaa39dc99f998683ce47 = $(`<div id="html_3fb9a5840ad3eaa39dc99f998683ce47" style="width: 100.0%; height: 100.0%;"><b>Riobamba</b><br>Conexiones:<br>- Azogues: 227 km<br>- Ambato: 54 km<br>- Babahoyo: 177 km<br>- Guaranda: 107 km<br>- Baños: 62 km<br></div>`)[0];
+                popup_3a2ceca4faacee569190c4e8a1fc0112.setContent(html_3fb9a5840ad3eaa39dc99f998683ce47);
+            
+        
+
+        marker_c04a83ad00ac3eaacf3a60f1e5507d10.bindPopup(popup_3a2ceca4faacee569190c4e8a1fc0112)
+        ;
+
+        
+    
+    
+            marker_c04a83ad00ac3eaacf3a60f1e5507d10.bindTooltip(
+                `<div>
+                     Riobamba
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c04a83ad00ac3eaacf3a60f1e5507d10.setIcon(icon_2aff2adbc21ff5ba534db2734ee07315);
+            
+    
+            var marker_f90c5ad11f509958305c3330802f603f = L.marker(
+                [-2.7402, -78.8467],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_c1d7d85738e67dbc04002953937d317d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b05a000763b5fda6b09ce36f1855dbee = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_774f7b5503b588910bc7c58fb7d103c1 = $(`<div id="html_774f7b5503b588910bc7c58fb7d103c1" style="width: 100.0%; height: 100.0%;"><b>Azogues</b><br>Conexiones:<br>- Riobamba: 227 km<br>- Cuenca: 41 km<br></div>`)[0];
+                popup_b05a000763b5fda6b09ce36f1855dbee.setContent(html_774f7b5503b588910bc7c58fb7d103c1);
+            
+        
+
+        marker_f90c5ad11f509958305c3330802f603f.bindPopup(popup_b05a000763b5fda6b09ce36f1855dbee)
+        ;
+
+        
+    
+    
+            marker_f90c5ad11f509958305c3330802f603f.bindTooltip(
+                `<div>
+                     Azogues
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f90c5ad11f509958305c3330802f603f.setIcon(icon_c1d7d85738e67dbc04002953937d317d);
+            
+    
+            var marker_863df5dd87e93b3431074e7ca5d58100 = L.marker(
+                [-2.9001, -79.0059],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_64a3627df9fed4d7b0fe708d31c27204 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_cb8744f8616dcf8716f227174f794d16 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_d41d34ba6e8d53e65e2ac33b4fdac5e3 = $(`<div id="html_d41d34ba6e8d53e65e2ac33b4fdac5e3" style="width: 100.0%; height: 100.0%;"><b>Cuenca</b><br>Conexiones:<br>- Azogues: 41 km<br>- Guayaquil: 250 km<br>- Loja: 253 km<br>- Machala: 194 km<br></div>`)[0];
+                popup_cb8744f8616dcf8716f227174f794d16.setContent(html_d41d34ba6e8d53e65e2ac33b4fdac5e3);
+            
+        
+
+        marker_863df5dd87e93b3431074e7ca5d58100.bindPopup(popup_cb8744f8616dcf8716f227174f794d16)
+        ;
+
+        
+    
+    
+            marker_863df5dd87e93b3431074e7ca5d58100.bindTooltip(
+                `<div>
+                     Cuenca
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_863df5dd87e93b3431074e7ca5d58100.setIcon(icon_64a3627df9fed4d7b0fe708d31c27204);
+            
+    
+            var marker_fc480927ce3d20763813c30a237c5dad = L.marker(
+                [-1.8017, -79.5343],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_ef52569f3523b4e55f34b82e4f894b13 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5092927d2442289a6c7f3a69724cc24e = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_300f91728ccd14a0c3d41227eb19b9c2 = $(`<div id="html_300f91728ccd14a0c3d41227eb19b9c2" style="width: 100.0%; height: 100.0%;"><b>Babahoyo</b><br>Conexiones:<br>- Guaranda: 123 km<br>- Guayaquil: 63 km<br>- Riobamba: 177 km<br>- Quevedo: 103 km<br></div>`)[0];
+                popup_5092927d2442289a6c7f3a69724cc24e.setContent(html_300f91728ccd14a0c3d41227eb19b9c2);
+            
+        
+
+        marker_fc480927ce3d20763813c30a237c5dad.bindPopup(popup_5092927d2442289a6c7f3a69724cc24e)
+        ;
+
+        
+    
+    
+            marker_fc480927ce3d20763813c30a237c5dad.bindTooltip(
+                `<div>
+                     Babahoyo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fc480927ce3d20763813c30a237c5dad.setIcon(icon_ef52569f3523b4e55f34b82e4f894b13);
+            
+    
+            var marker_fb8088612f045824831eaf901be24312 = L.marker(
+                [-2.1894, -79.8891],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_dadcdabecf79af2417a97700f872f79a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_31db28c66eb12059b76a29dcaa970dd7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a2adfe5bada21792b35e003d3f582115 = $(`<div id="html_a2adfe5bada21792b35e003d3f582115" style="width: 100.0%; height: 100.0%;"><b>Guayaquil</b><br>Conexiones:<br>- Babahoyo: 63 km<br>- Cuenca: 250 km<br>- Machala: 200 km<br>- Quevedo: 175 km<br>- Salinas: 173 km<br></div>`)[0];
+                popup_31db28c66eb12059b76a29dcaa970dd7.setContent(html_a2adfe5bada21792b35e003d3f582115);
+            
+        
+
+        marker_fb8088612f045824831eaf901be24312.bindPopup(popup_31db28c66eb12059b76a29dcaa970dd7)
+        ;
+
+        
+    
+    
+            marker_fb8088612f045824831eaf901be24312.bindTooltip(
+                `<div>
+                     Guayaquil
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fb8088612f045824831eaf901be24312.setIcon(icon_dadcdabecf79af2417a97700f872f79a);
+            
+    
+            var marker_020f2cac61d25573e5f765968847c1bc = L.marker(
+                [-1.0287, -79.4632],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_1060e395ece402e929ffcb6ed046fa3d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ccc03e0ca4a1200a266bf5b4684d098a = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_b677e1e5d4afb565c73ffcdf77653be4 = $(`<div id="html_b677e1e5d4afb565c73ffcdf77653be4" style="width: 100.0%; height: 100.0%;"><b>Quevedo</b><br>Conexiones:<br>- Babahoyo: 103 km<br>- Guayaquil: 175 km<br>- Sto. Domingo: 113 km<br>- Portoviejo: 188 km<br></div>`)[0];
+                popup_ccc03e0ca4a1200a266bf5b4684d098a.setContent(html_b677e1e5d4afb565c73ffcdf77653be4);
+            
+        
+
+        marker_020f2cac61d25573e5f765968847c1bc.bindPopup(popup_ccc03e0ca4a1200a266bf5b4684d098a)
+        ;
+
+        
+    
+    
+            marker_020f2cac61d25573e5f765968847c1bc.bindTooltip(
+                `<div>
+                     Quevedo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_020f2cac61d25573e5f765968847c1bc.setIcon(icon_1060e395ece402e929ffcb6ed046fa3d);
+            
+    
+            var marker_b10885d7de6b342611a13bc810d4efcc = L.marker(
+                [-3.9931, -79.2042],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_5939db5b637474a5bff59b39853058d7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2dd4819313bb99f6b3aa101700d232b6 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fce83c1818c11e20ab13491d5274b1b1 = $(`<div id="html_fce83c1818c11e20ab13491d5274b1b1" style="width: 100.0%; height: 100.0%;"><b>Loja</b><br>Conexiones:<br>- Cuenca: 253 km<br>- Machala: 253 km<br>- Zamora: 57 km<br>- Macara: 195 km<br></div>`)[0];
+                popup_2dd4819313bb99f6b3aa101700d232b6.setContent(html_fce83c1818c11e20ab13491d5274b1b1);
+            
+        
+
+        marker_b10885d7de6b342611a13bc810d4efcc.bindPopup(popup_2dd4819313bb99f6b3aa101700d232b6)
+        ;
+
+        
+    
+    
+            marker_b10885d7de6b342611a13bc810d4efcc.bindTooltip(
+                `<div>
+                     Loja
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b10885d7de6b342611a13bc810d4efcc.setIcon(icon_5939db5b637474a5bff59b39853058d7);
+            
+    
+            var marker_b1f77ae4a21c9b6e90582374a72b1f6f = L.marker(
+                [-3.2582, -79.9607],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_7f422ec4044f5eb32b29636219cd7565 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9f65207e3af34fbecca7b19ca2d5541f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a7b9209b08216bf6c41a71dc0eab682e = $(`<div id="html_a7b9209b08216bf6c41a71dc0eab682e" style="width: 100.0%; height: 100.0%;"><b>Machala</b><br>Conexiones:<br>- Loja: 253 km<br>- Cuenca: 194 km<br>- Guayaquil: 200 km<br>- Huaquillas: 74 km<br></div>`)[0];
+                popup_9f65207e3af34fbecca7b19ca2d5541f.setContent(html_a7b9209b08216bf6c41a71dc0eab682e);
+            
+        
+
+        marker_b1f77ae4a21c9b6e90582374a72b1f6f.bindPopup(popup_9f65207e3af34fbecca7b19ca2d5541f)
+        ;
+
+        
+    
+    
+            marker_b1f77ae4a21c9b6e90582374a72b1f6f.bindTooltip(
+                `<div>
+                     Machala
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b1f77ae4a21c9b6e90582374a72b1f6f.setIcon(icon_7f422ec4044f5eb32b29636219cd7565);
+            
+    
+            var marker_491cf7011a6792558296213983a063e7 = L.marker(
+                [0.9592, -79.6539],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_8673b1b5c875a2989d3ce451c61c7aa6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_18630f8fede42b1b8bccbfa1e141181f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f39ea142b2abe63c58beb5884f0094b7 = $(`<div id="html_f39ea142b2abe63c58beb5884f0094b7" style="width: 100.0%; height: 100.0%;"><b>Esmeraldas</b><br>Conexiones:<br>- Sto. Domingo: 177 km<br>- Quininde: 98 km<br>- Muisne: 98 km<br></div>`)[0];
+                popup_18630f8fede42b1b8bccbfa1e141181f.setContent(html_f39ea142b2abe63c58beb5884f0094b7);
+            
+        
+
+        marker_491cf7011a6792558296213983a063e7.bindPopup(popup_18630f8fede42b1b8bccbfa1e141181f)
+        ;
+
+        
+    
+    
+            marker_491cf7011a6792558296213983a063e7.bindTooltip(
+                `<div>
+                     Esmeraldas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_491cf7011a6792558296213983a063e7.setIcon(icon_8673b1b5c875a2989d3ce451c61c7aa6);
+            
+    
+            var marker_1ffa87161e22b8f174d462af41f52f61 = L.marker(
+                [0.3147, -79.4701],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_f9e84b83eda595327e1bdbe39f035264 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3e3fbc288e7f2f56501855fca72b0cb2 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ffa1525923c41c84dcf84cf0bf816b8e = $(`<div id="html_ffa1525923c41c84dcf84cf0bf816b8e" style="width: 100.0%; height: 100.0%;"><b>Quininde</b><br>Conexiones:<br>- Esmeraldas: 98 km<br>- Sto. Domingo: 130 km<br>- Muisne: 145 km<br></div>`)[0];
+                popup_3e3fbc288e7f2f56501855fca72b0cb2.setContent(html_ffa1525923c41c84dcf84cf0bf816b8e);
+            
+        
+
+        marker_1ffa87161e22b8f174d462af41f52f61.bindPopup(popup_3e3fbc288e7f2f56501855fca72b0cb2)
+        ;
+
+        
+    
+    
+            marker_1ffa87161e22b8f174d462af41f52f61.bindTooltip(
+                `<div>
+                     Quininde
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1ffa87161e22b8f174d462af41f52f61.setIcon(icon_f9e84b83eda595327e1bdbe39f035264);
+            
+    
+            var marker_9ba18ae115060833351b9b6c01b0ca9c = L.marker(
+                [-2.2013, -80.9765],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_8ce56baf27b1fdaa701a6c19d549701c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_07a99b99c131b5c66330ed6b8d48676d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6b2dc4c5d3f1bd696a2edeaa89e935a7 = $(`<div id="html_6b2dc4c5d3f1bd696a2edeaa89e935a7" style="width: 100.0%; height: 100.0%;"><b>Salinas</b><br>Conexiones:<br>- Guayaquil: 173 km<br></div>`)[0];
+                popup_07a99b99c131b5c66330ed6b8d48676d.setContent(html_6b2dc4c5d3f1bd696a2edeaa89e935a7);
+            
+        
+
+        marker_9ba18ae115060833351b9b6c01b0ca9c.bindPopup(popup_07a99b99c131b5c66330ed6b8d48676d)
+        ;
+
+        
+    
+    
+            marker_9ba18ae115060833351b9b6c01b0ca9c.bindTooltip(
+                `<div>
+                     Salinas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9ba18ae115060833351b9b6c01b0ca9c.setIcon(icon_8ce56baf27b1fdaa701a6c19d549701c);
+            
+    
+            var marker_a4e7fe74ceaca98c6b6ff32b3370b3d1 = L.marker(
+                [0.3517, -78.1223],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_1fa157bfbf3e3e3f6b0b291a975683bc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5114665ee00d405330e4321336f9a403 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_be1d48df52eec63d4cf3c971f3fa13d3 = $(`<div id="html_be1d48df52eec63d4cf3c971f3fa13d3" style="width: 100.0%; height: 100.0%;"><b>Ibarra</b><br>Conexiones:<br>- Quito: 115 km<br>- Tulcán: 127 km<br>- Otavalo: 26 km<br></div>`)[0];
+                popup_5114665ee00d405330e4321336f9a403.setContent(html_be1d48df52eec63d4cf3c971f3fa13d3);
+            
+        
+
+        marker_a4e7fe74ceaca98c6b6ff32b3370b3d1.bindPopup(popup_5114665ee00d405330e4321336f9a403)
+        ;
+
+        
+    
+    
+            marker_a4e7fe74ceaca98c6b6ff32b3370b3d1.bindTooltip(
+                `<div>
+                     Ibarra
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a4e7fe74ceaca98c6b6ff32b3370b3d1.setIcon(icon_1fa157bfbf3e3e3f6b0b291a975683bc);
+            
+    
+            var marker_d5a51c8f8094d0565dc00a7a12bd747e = L.marker(
+                [0.2343, -78.261],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_db21fab45b6ce99407dcf4a3ea8371c5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a2ca18c681912cc7d43cf5acaae5f377 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_fe3d06083119a4520a5c352a1cc09755 = $(`<div id="html_fe3d06083119a4520a5c352a1cc09755" style="width: 100.0%; height: 100.0%;"><b>Otavalo</b><br>Conexiones:<br>- Ibarra: 26 km<br>- Quito: 106 km<br></div>`)[0];
+                popup_a2ca18c681912cc7d43cf5acaae5f377.setContent(html_fe3d06083119a4520a5c352a1cc09755);
+            
+        
+
+        marker_d5a51c8f8094d0565dc00a7a12bd747e.bindPopup(popup_a2ca18c681912cc7d43cf5acaae5f377)
+        ;
+
+        
+    
+    
+            marker_d5a51c8f8094d0565dc00a7a12bd747e.bindTooltip(
+                `<div>
+                     Otavalo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d5a51c8f8094d0565dc00a7a12bd747e.setIcon(icon_db21fab45b6ce99407dcf4a3ea8371c5);
+            
+    
+            var marker_e479009ea26ed03161ef6f63bd369015 = L.marker(
+                [-0.1807, -78.4678],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_40ad1e8a4cf5cc143db53bb769faf483 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_72a2e5e7371e6028774e3573ba2b238d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_90ca81b43ab5c92ddfbff4a1ddb7ef73 = $(`<div id="html_90ca81b43ab5c92ddfbff4a1ddb7ef73" style="width: 100.0%; height: 100.0%;"><b>Quito</b><br>Conexiones:<br>- Ibarra: 115 km<br>- Sto. Domingo: 133 km<br>- Otavalo: 106 km<br>- Baeza: 108 km<br>- Aloag: 30 km<br></div>`)[0];
+                popup_72a2e5e7371e6028774e3573ba2b238d.setContent(html_90ca81b43ab5c92ddfbff4a1ddb7ef73);
+            
+        
+
+        marker_e479009ea26ed03161ef6f63bd369015.bindPopup(popup_72a2e5e7371e6028774e3573ba2b238d)
+        ;
+
+        
+    
+    
+            marker_e479009ea26ed03161ef6f63bd369015.bindTooltip(
+                `<div>
+                     Quito
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e479009ea26ed03161ef6f63bd369015.setIcon(icon_40ad1e8a4cf5cc143db53bb769faf483);
+            
+    
+            var marker_0de23e1f25004f51dd4bbe9502a48ad0 = L.marker(
+                [0.8124, -77.7172],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_206606b63b5d494481d0082b0c34a171 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3af8ef7fcc433314d7893c6395625799 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9954ca58810be872292d123f88d34bbf = $(`<div id="html_9954ca58810be872292d123f88d34bbf" style="width: 100.0%; height: 100.0%;"><b>Tulcán</b><br>Conexiones:<br>- Ibarra: 127 km<br>- Rumichaca: 3 km<br></div>`)[0];
+                popup_3af8ef7fcc433314d7893c6395625799.setContent(html_9954ca58810be872292d123f88d34bbf);
+            
+        
+
+        marker_0de23e1f25004f51dd4bbe9502a48ad0.bindPopup(popup_3af8ef7fcc433314d7893c6395625799)
+        ;
+
+        
+    
+    
+            marker_0de23e1f25004f51dd4bbe9502a48ad0.bindTooltip(
+                `<div>
+                     Tulcán
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0de23e1f25004f51dd4bbe9502a48ad0.setIcon(icon_206606b63b5d494481d0082b0c34a171);
+            
+    
+            var marker_1f8c5b401ea9dc560ab797e56322cb8b = L.marker(
+                [-0.4583, -78.5809],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_b6d59e44eafd04ffe3f9b5f7b0836d58 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b448aadca188d92dd5d854605c2fedb0 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9a6c551c2455e4ea067deb17585d2c6c = $(`<div id="html_9a6c551c2455e4ea067deb17585d2c6c" style="width: 100.0%; height: 100.0%;"><b>Aloag</b><br>Conexiones:<br>- Latacunga: 56 km<br>- Quito: 30 km<br></div>`)[0];
+                popup_b448aadca188d92dd5d854605c2fedb0.setContent(html_9a6c551c2455e4ea067deb17585d2c6c);
+            
+        
+
+        marker_1f8c5b401ea9dc560ab797e56322cb8b.bindPopup(popup_b448aadca188d92dd5d854605c2fedb0)
+        ;
+
+        
+    
+    
+            marker_1f8c5b401ea9dc560ab797e56322cb8b.bindTooltip(
+                `<div>
+                     Aloag
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1f8c5b401ea9dc560ab797e56322cb8b.setIcon(icon_b6d59e44eafd04ffe3f9b5f7b0836d58);
+            
+    
+            var marker_b7b5a9f56b35c698a4143963540657a6 = L.marker(
+                [-4.0678, -78.9551],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_0c6014f0fbcfeab9332256ad9abc2c38 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f5310610a6e5c3ce281be8bf1efaaa8f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_58844ea68d0d427057a41a35b44c85b8 = $(`<div id="html_58844ea68d0d427057a41a35b44c85b8" style="width: 100.0%; height: 100.0%;"><b>Zamora</b><br>Conexiones:<br>- Loja: 57 km<br></div>`)[0];
+                popup_f5310610a6e5c3ce281be8bf1efaaa8f.setContent(html_58844ea68d0d427057a41a35b44c85b8);
+            
+        
+
+        marker_b7b5a9f56b35c698a4143963540657a6.bindPopup(popup_f5310610a6e5c3ce281be8bf1efaaa8f)
+        ;
+
+        
+    
+    
+            marker_b7b5a9f56b35c698a4143963540657a6.bindTooltip(
+                `<div>
+                     Zamora
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b7b5a9f56b35c698a4143963540657a6.setIcon(icon_0c6014f0fbcfeab9332256ad9abc2c38);
+            
+    
+            var marker_b4e625a07229765e40a85e0ebefa42e4 = L.marker(
+                [-4.3773, -79.9434],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_136ce5676524791c7991d79746262460 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_354f546f7e54fb478687dba50146b24f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_a7eb362fbd84daa21e37d6bad3b5311e = $(`<div id="html_a7eb362fbd84daa21e37d6bad3b5311e" style="width: 100.0%; height: 100.0%;"><b>Macara</b><br>Conexiones:<br>- Loja: 195 km<br></div>`)[0];
+                popup_354f546f7e54fb478687dba50146b24f.setContent(html_a7eb362fbd84daa21e37d6bad3b5311e);
+            
+        
+
+        marker_b4e625a07229765e40a85e0ebefa42e4.bindPopup(popup_354f546f7e54fb478687dba50146b24f)
+        ;
+
+        
+    
+    
+            marker_b4e625a07229765e40a85e0ebefa42e4.bindTooltip(
+                `<div>
+                     Macara
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b4e625a07229765e40a85e0ebefa42e4.setIcon(icon_136ce5676524791c7991d79746262460);
+            
+    
+            var marker_6bbae31ea5d8803033f1129a9787a887 = L.marker(
+                [-0.4605, -77.8887],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_36b374738684a16a23bc99107863014c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4e1c9a1c3fd6956eb7eed752fd1d7581 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_aa9a2fe3f639b2dfaaf93cf0c13dfaea = $(`<div id="html_aa9a2fe3f639b2dfaaf93cf0c13dfaea" style="width: 100.0%; height: 100.0%;"><b>Baeza</b><br>Conexiones:<br>- Quito: 108 km<br>- Tena: 52 km<br>- Nueva Loja: 149 km<br></div>`)[0];
+                popup_4e1c9a1c3fd6956eb7eed752fd1d7581.setContent(html_aa9a2fe3f639b2dfaaf93cf0c13dfaea);
+            
+        
+
+        marker_6bbae31ea5d8803033f1129a9787a887.bindPopup(popup_4e1c9a1c3fd6956eb7eed752fd1d7581)
+        ;
+
+        
+    
+    
+            marker_6bbae31ea5d8803033f1129a9787a887.bindTooltip(
+                `<div>
+                     Baeza
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6bbae31ea5d8803033f1129a9787a887.setIcon(icon_36b374738684a16a23bc99107863014c);
+            
+    
+            var marker_97ab15e1cef3bf10dc834f4d548867f2 = L.marker(
+                [-0.2522, -79.1716],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_54326a26efc587875061eef15ee1828d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d57d2cd24175de1763a6ff2e1092393d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c450c2f2ed514052e1c85569778faefa = $(`<div id="html_c450c2f2ed514052e1c85569778faefa" style="width: 100.0%; height: 100.0%;"><b>Sto. Domingo</b><br>Conexiones:<br>- Esmeraldas: 177 km<br>- Quito: 133 km<br>- Quevedo: 113 km<br>- Pedernales: 193 km<br>- Quininde: 130 km<br></div>`)[0];
+                popup_d57d2cd24175de1763a6ff2e1092393d.setContent(html_c450c2f2ed514052e1c85569778faefa);
+            
+        
+
+        marker_97ab15e1cef3bf10dc834f4d548867f2.bindPopup(popup_d57d2cd24175de1763a6ff2e1092393d)
+        ;
+
+        
+    
+    
+            marker_97ab15e1cef3bf10dc834f4d548867f2.bindTooltip(
+                `<div>
+                     Sto. Domingo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_97ab15e1cef3bf10dc834f4d548867f2.setIcon(icon_54326a26efc587875061eef15ee1828d);
+            
+    
+            var marker_d436d31f6844a8773b8fa05681196fcd = L.marker(
+                [0.0731, -80.0532],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_05f7ea555aa44a4418f571d5f8e4bb30 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b3e92be2a07019455544ea3a30b2bdad = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_1020f33bd7e125bcb60dc9eff43d9755 = $(`<div id="html_1020f33bd7e125bcb60dc9eff43d9755" style="width: 100.0%; height: 100.0%;"><b>Pedernales</b><br>Conexiones:<br>- Bahía de Caraquez: 120 km<br>- Sto. Domingo: 193 km<br></div>`)[0];
+                popup_b3e92be2a07019455544ea3a30b2bdad.setContent(html_1020f33bd7e125bcb60dc9eff43d9755);
+            
+        
+
+        marker_d436d31f6844a8773b8fa05681196fcd.bindPopup(popup_b3e92be2a07019455544ea3a30b2bdad)
+        ;
+
+        
+    
+    
+            marker_d436d31f6844a8773b8fa05681196fcd.bindTooltip(
+                `<div>
+                     Pedernales
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d436d31f6844a8773b8fa05681196fcd.setIcon(icon_05f7ea555aa44a4418f571d5f8e4bb30);
+            
+    
+            var marker_e856402d3bfe15833046c0b52c96108f = L.marker(
+                [-3.4766, -80.2297],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_930a6f45e980cef032f04184dbad2a31 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0150c2eee912e478e112fcbc98883821 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6d0f7ccbeb4d4e485a22491d999d9fe9 = $(`<div id="html_6d0f7ccbeb4d4e485a22491d999d9fe9" style="width: 100.0%; height: 100.0%;"><b>Huaquillas</b><br>Conexiones:<br>- Machala: 74 km<br></div>`)[0];
+                popup_0150c2eee912e478e112fcbc98883821.setContent(html_6d0f7ccbeb4d4e485a22491d999d9fe9);
+            
+        
+
+        marker_e856402d3bfe15833046c0b52c96108f.bindPopup(popup_0150c2eee912e478e112fcbc98883821)
+        ;
+
+        
+    
+    
+            marker_e856402d3bfe15833046c0b52c96108f.bindTooltip(
+                `<div>
+                     Huaquillas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e856402d3bfe15833046c0b52c96108f.setIcon(icon_930a6f45e980cef032f04184dbad2a31);
+            
+    
+            var marker_fc3533b87eefa880a4aab6c8fd3f8054 = L.marker(
+                [-0.994, -77.8159],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_0c96a7a65faca911dcd501eb6bb33a5e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ccf915b788b75d668c75f6dd19ed450f = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_314271c9d1c4513b9c21aa991eca1dd1 = $(`<div id="html_314271c9d1c4513b9c21aa991eca1dd1" style="width: 100.0%; height: 100.0%;"><b>Tena</b><br>Conexiones:<br>- Puyo: 85 km<br>- Baeza: 52 km<br></div>`)[0];
+                popup_ccf915b788b75d668c75f6dd19ed450f.setContent(html_314271c9d1c4513b9c21aa991eca1dd1);
+            
+        
+
+        marker_fc3533b87eefa880a4aab6c8fd3f8054.bindPopup(popup_ccf915b788b75d668c75f6dd19ed450f)
+        ;
+
+        
+    
+    
+            marker_fc3533b87eefa880a4aab6c8fd3f8054.bindTooltip(
+                `<div>
+                     Tena
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fc3533b87eefa880a4aab6c8fd3f8054.setIcon(icon_0c96a7a65faca911dcd501eb6bb33a5e);
+            
+    
+            var marker_f03053297e814fce8eb9857722f3f7a1 = L.marker(
+                [-2.3046, -78.1192],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_ce58fd24c9fa8b10afaf76cd4cf967b2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f13ca58f33f683cab858c7d4af875902 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ec31e2af097272d8dadc5abedbef5e0b = $(`<div id="html_ec31e2af097272d8dadc5abedbef5e0b" style="width: 100.0%; height: 100.0%;"><b>Macas</b><br>Conexiones:<br>- Puyo: 135 km<br>- Pto. Morona: 184 km<br></div>`)[0];
+                popup_f13ca58f33f683cab858c7d4af875902.setContent(html_ec31e2af097272d8dadc5abedbef5e0b);
+            
+        
+
+        marker_f03053297e814fce8eb9857722f3f7a1.bindPopup(popup_f13ca58f33f683cab858c7d4af875902)
+        ;
+
+        
+    
+    
+            marker_f03053297e814fce8eb9857722f3f7a1.bindTooltip(
+                `<div>
+                     Macas
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f03053297e814fce8eb9857722f3f7a1.setIcon(icon_ce58fd24c9fa8b10afaf76cd4cf967b2);
+            
+    
+            var marker_1aec2e9cb80c3b9e7fbafa0e0e901312 = L.marker(
+                [0.8187, -77.6657],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_66618af8efe0ed1f1580868fa7d79d8f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_79dab29b29b9df1a65f628d908ba1cb5 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_6a54b99f382e68178ebe289afac6bd48 = $(`<div id="html_6a54b99f382e68178ebe289afac6bd48" style="width: 100.0%; height: 100.0%;"><b>Rumichaca</b><br>Conexiones:<br>- Tulcán: 3 km<br></div>`)[0];
+                popup_79dab29b29b9df1a65f628d908ba1cb5.setContent(html_6a54b99f382e68178ebe289afac6bd48);
+            
+        
+
+        marker_1aec2e9cb80c3b9e7fbafa0e0e901312.bindPopup(popup_79dab29b29b9df1a65f628d908ba1cb5)
+        ;
+
+        
+    
+    
+            marker_1aec2e9cb80c3b9e7fbafa0e0e901312.bindTooltip(
+                `<div>
+                     Rumichaca
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1aec2e9cb80c3b9e7fbafa0e0e901312.setIcon(icon_66618af8efe0ed1f1580868fa7d79d8f);
+            
+    
+            var marker_989fa1425dae2abedd46b4a3f822cf2c = L.marker(
+                [-1.0546, -80.4545],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_f89087c9f7398e5afafc1867b5766168 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_16698020bb0039e35cf8bff2db811da3 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_770b9b10951f7b88fd52822889197d06 = $(`<div id="html_770b9b10951f7b88fd52822889197d06" style="width: 100.0%; height: 100.0%;"><b>Portoviejo</b><br>Conexiones:<br>- Quevedo: 188 km<br>- Manta: 45 km<br>- Bahía de Caraquez: 65 km<br></div>`)[0];
+                popup_16698020bb0039e35cf8bff2db811da3.setContent(html_770b9b10951f7b88fd52822889197d06);
+            
+        
+
+        marker_989fa1425dae2abedd46b4a3f822cf2c.bindPopup(popup_16698020bb0039e35cf8bff2db811da3)
+        ;
+
+        
+    
+    
+            marker_989fa1425dae2abedd46b4a3f822cf2c.bindTooltip(
+                `<div>
+                     Portoviejo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_989fa1425dae2abedd46b4a3f822cf2c.setIcon(icon_f89087c9f7398e5afafc1867b5766168);
+            
+    
+            var marker_f0f477e8493c01bfd0669a0d1083a636 = L.marker(
+                [-0.9676, -80.7089],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_250a54ab80f3a32443cdf0486a143555 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7213f13026594e149ad2c46556b24543 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_c3080a36db7ce526ae43d204ac5a54ba = $(`<div id="html_c3080a36db7ce526ae43d204ac5a54ba" style="width: 100.0%; height: 100.0%;"><b>Manta</b><br>Conexiones:<br>- Portoviejo: 45 km<br>- Bahía de Caraquez: 89 km<br></div>`)[0];
+                popup_7213f13026594e149ad2c46556b24543.setContent(html_c3080a36db7ce526ae43d204ac5a54ba);
+            
+        
+
+        marker_f0f477e8493c01bfd0669a0d1083a636.bindPopup(popup_7213f13026594e149ad2c46556b24543)
+        ;
+
+        
+    
+    
+            marker_f0f477e8493c01bfd0669a0d1083a636.bindTooltip(
+                `<div>
+                     Manta
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f0f477e8493c01bfd0669a0d1083a636.setIcon(icon_250a54ab80f3a32443cdf0486a143555);
+            
+    
+            var marker_8f812956b029b3db3581cd3544ab0488 = L.marker(
+                [-0.5975, -80.4239],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_293b317eea41f0f1deb2ace224d9cfe8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_960eb2a207cf6b0feef59574fef4ecb1 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_666ffbdb0983b9d2bccd11d99473065a = $(`<div id="html_666ffbdb0983b9d2bccd11d99473065a" style="width: 100.0%; height: 100.0%;"><b>Bahía de Caraquez</b><br>Conexiones:<br>- Manta: 89 km<br>- Portoviejo: 65 km<br>- Pedernales: 120 km<br></div>`)[0];
+                popup_960eb2a207cf6b0feef59574fef4ecb1.setContent(html_666ffbdb0983b9d2bccd11d99473065a);
+            
+        
+
+        marker_8f812956b029b3db3581cd3544ab0488.bindPopup(popup_960eb2a207cf6b0feef59574fef4ecb1)
+        ;
+
+        
+    
+    
+            marker_8f812956b029b3db3581cd3544ab0488.bindTooltip(
+                `<div>
+                     Bahía de Caraquez
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8f812956b029b3db3581cd3544ab0488.setIcon(icon_293b317eea41f0f1deb2ace224d9cfe8);
+            
+    
+            var marker_0905899ad17eddc7244e35515069bf3a = L.marker(
+                [0.0876, -76.892],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_1de2ea9bfac8e256f23874bd977d44e5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d9b5dc13bcb83468b7fa609627aad6ed = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_56a42d1c0e5ce1f2448768df061875df = $(`<div id="html_56a42d1c0e5ce1f2448768df061875df" style="width: 100.0%; height: 100.0%;"><b>Nueva Loja</b><br>Conexiones:<br>- Baeza: 149 km<br>- Pte. San Miguel: 89 km<br>- Shufhufindi: 57 km<br></div>`)[0];
+                popup_d9b5dc13bcb83468b7fa609627aad6ed.setContent(html_56a42d1c0e5ce1f2448768df061875df);
+            
+        
+
+        marker_0905899ad17eddc7244e35515069bf3a.bindPopup(popup_d9b5dc13bcb83468b7fa609627aad6ed)
+        ;
+
+        
+    
+    
+            marker_0905899ad17eddc7244e35515069bf3a.bindTooltip(
+                `<div>
+                     Nueva Loja
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0905899ad17eddc7244e35515069bf3a.setIcon(icon_1de2ea9bfac8e256f23874bd977d44e5);
+            
+    
+            var marker_9d12a2e419ecc7131f69c922a2a097ea = L.marker(
+                [1.1117, -77.5822],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_bca3fa9cfc14d0aa1b2dbea0906745b0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_358c6abed3e963ee06dba670f8edf24d = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_f26518b4d3d4d7e2d279aecfdbe39a58 = $(`<div id="html_f26518b4d3d4d7e2d279aecfdbe39a58" style="width: 100.0%; height: 100.0%;"><b>Pte. San Miguel</b><br>Conexiones:<br>- Nueva Loja: 89 km<br>- Pto. Putumayo: 140 km<br></div>`)[0];
+                popup_358c6abed3e963ee06dba670f8edf24d.setContent(html_f26518b4d3d4d7e2d279aecfdbe39a58);
+            
+        
+
+        marker_9d12a2e419ecc7131f69c922a2a097ea.bindPopup(popup_358c6abed3e963ee06dba670f8edf24d)
+        ;
+
+        
+    
+    
+            marker_9d12a2e419ecc7131f69c922a2a097ea.bindTooltip(
+                `<div>
+                     Pte. San Miguel
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9d12a2e419ecc7131f69c922a2a097ea.setIcon(icon_bca3fa9cfc14d0aa1b2dbea0906745b0);
+            
+    
+            var marker_103ca59164c5133adab6b4d4c48e61cf = L.marker(
+                [0.0, -75.0],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_6e7a9dd17066b0bb25129797b6095de7 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_04743f423ba73f74ee1270c99c12caac = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_9e423bfac3ba8451f71e05e897b4c415 = $(`<div id="html_9e423bfac3ba8451f71e05e897b4c415" style="width: 100.0%; height: 100.0%;"><b>Pto. Putumayo</b><br>Conexiones:<br>- Pte. San Miguel: 140 km<br></div>`)[0];
+                popup_04743f423ba73f74ee1270c99c12caac.setContent(html_9e423bfac3ba8451f71e05e897b4c415);
+            
+        
+
+        marker_103ca59164c5133adab6b4d4c48e61cf.bindPopup(popup_04743f423ba73f74ee1270c99c12caac)
+        ;
+
+        
+    
+    
+            marker_103ca59164c5133adab6b4d4c48e61cf.bindTooltip(
+                `<div>
+                     Pto. Putumayo
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_103ca59164c5133adab6b4d4c48e61cf.setIcon(icon_6e7a9dd17066b0bb25129797b6095de7);
+            
+    
+            var marker_cf3e240f523c0deb517e203a192e44c8 = L.marker(
+                [-2.9, -77.75],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_9e5a5ac721058efdc78a904e55ebfba3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5376c24b77e3415a6342964a4970df83 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_ed1b84574547ee704c47e5ba95a9caa7 = $(`<div id="html_ed1b84574547ee704c47e5ba95a9caa7" style="width: 100.0%; height: 100.0%;"><b>Pto. Morona</b><br>Conexiones:<br>- Macas: 184 km<br></div>`)[0];
+                popup_5376c24b77e3415a6342964a4970df83.setContent(html_ed1b84574547ee704c47e5ba95a9caa7);
+            
+        
+
+        marker_cf3e240f523c0deb517e203a192e44c8.bindPopup(popup_5376c24b77e3415a6342964a4970df83)
+        ;
+
+        
+    
+    
+            marker_cf3e240f523c0deb517e203a192e44c8.bindTooltip(
+                `<div>
+                     Pto. Morona
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cf3e240f523c0deb517e203a192e44c8.setIcon(icon_9e5a5ac721058efdc78a904e55ebfba3);
+            
+    
+            var marker_12e728a4abe2a6f0bf876408bfac7013 = L.marker(
+                [0.6099, -80.021],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_4c1702f139a75cda7873a5f4e9b1dfac = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2b1d7237ce093dd46c36fb7409cfabd7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_473737ef1a0dfd3bc7e2ec111e7682db = $(`<div id="html_473737ef1a0dfd3bc7e2ec111e7682db" style="width: 100.0%; height: 100.0%;"><b>Muisne</b><br>Conexiones:<br>- Quininde: 145 km<br>- Esmeraldas: 98 km<br></div>`)[0];
+                popup_2b1d7237ce093dd46c36fb7409cfabd7.setContent(html_473737ef1a0dfd3bc7e2ec111e7682db);
+            
+        
+
+        marker_12e728a4abe2a6f0bf876408bfac7013.bindPopup(popup_2b1d7237ce093dd46c36fb7409cfabd7)
+        ;
+
+        
+    
+    
+            marker_12e728a4abe2a6f0bf876408bfac7013.bindTooltip(
+                `<div>
+                     Muisne
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_12e728a4abe2a6f0bf876408bfac7013.setIcon(icon_4c1702f139a75cda7873a5f4e9b1dfac);
+            
+    
+            var marker_0cae069e37e4eb41220f59f8eb4d9666 = L.marker(
+                [-0.18875808845137917, -76.6426624192018],
+                {
+}
+            ).addTo(marker_cluster_025e8a274e61ae4da4a50655234515cb);
+        
+    
+            var icon_4ecbc4f0dbc128f8c53f4694e2cf59cc = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "blue",
+  "iconColor": "white",
+  "icon": "info-sign",
+  "prefix": "glyphicon",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8d0d3bfae7d33926e19d9a49e15ea4c7 = L.popup({
+  "maxWidth": 300,
+});
+
+        
+            
+                var html_0be8307fc975eaf34276c1086a3bf6a6 = $(`<div id="html_0be8307fc975eaf34276c1086a3bf6a6" style="width: 100.0%; height: 100.0%;"><b>Shufhufindi</b><br>Conexiones:<br>- Nueva Loja: 57 km<br></div>`)[0];
+                popup_8d0d3bfae7d33926e19d9a49e15ea4c7.setContent(html_0be8307fc975eaf34276c1086a3bf6a6);
+            
+        
+
+        marker_0cae069e37e4eb41220f59f8eb4d9666.bindPopup(popup_8d0d3bfae7d33926e19d9a49e15ea4c7)
+        ;
+
+        
+    
+    
+            marker_0cae069e37e4eb41220f59f8eb4d9666.bindTooltip(
+                `<div>
+                     Shufhufindi
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0cae069e37e4eb41220f59f8eb4d9666.setIcon(icon_4ecbc4f0dbc128f8c53f4694e2cf59cc);
+            
+    
+            marker_cluster_025e8a274e61ae4da4a50655234515cb.addTo(map_4946b4dccab0039810bb92f101102afd);
+        
+    
+            var layer_control_ad8cb96b8e2965f9f00488991ac19ad1_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_8f680612828d9ada6dc31d7e2287035a,
+                },
+                overlays :  {
+                    "Ciudades" : marker_cluster_025e8a274e61ae4da4a50655234515cb,
+                },
+            };
+            let layer_control_ad8cb96b8e2965f9f00488991ac19ad1 = L.control.layers(
+                layer_control_ad8cb96b8e2965f9f00488991ac19ad1_layers.base_layers,
+                layer_control_ad8cb96b8e2965f9f00488991ac19ad1_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_4946b4dccab0039810bb92f101102afd);
+
+        
+</script>
+</html>

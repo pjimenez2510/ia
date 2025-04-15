@@ -27,15 +27,15 @@ import networkx as nx
 from matplotlib.colors import to_rgba
 
 class GrafoEcuador:
-"""
-Clase que representa el grafo de ciudades del Ecuador y sus conexiones.
-
-Esta clase permite:
-- Almacenar ciudades con sus coordenadas geográficas
-- Representar las conexiones entre ciudades y sus distancias
-- Implementar algoritmos de búsqueda de rutas
-- Visualizar el grafo y las rutas encontradas
-"""
+    """
+    Clase que representa el grafo de ciudades del Ecuador y sus conexiones.
+    
+    Esta clase permite:
+    - Almacenar ciudades con sus coordenadas geográficas
+    - Representar las conexiones entre ciudades y sus distancias
+    - Implementar algoritmos de búsqueda de rutas
+    - Visualizar el grafo y las rutas encontradas
+    """
     def __init__(self, grafo_json=None):
         """
         Constructor de la clase GrafoEcuador.
